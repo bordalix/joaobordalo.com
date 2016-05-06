@@ -10,16 +10,15 @@ RssFeed.publish( 'posts', function() {
   
   var posts = Posts.find({},{sort:{createdAt:-1}});
   posts.forEach( function(post) { 
-    //post.body  = post.body.replace(/allowfullscreen/gi,"allowfullscreen=''");
-    //post.body  = post.body.replace(/&/gi,"&amp;");       
-    //post.title = post.title.replace(/&/gi,"&amp;");
-    post.body = post.body.replace(/(\r\n|\n|\r)/gm,"");                
-    post.date = moment(post.createdAt, 'YYYY-MM-DD hh:mm:ss').format('ddd, DD MMM YYYY hh:mm:ss');
+    post.title = '<![CDATA[' + post.title + ']]>';
+    post.body  = post.body.replace(/(\r\n|\n|\r)/gm,"");
+    post.body  = '<![CDATA[' + post.body + ']]>';
+    post.date  = moment(post.createdAt, 'YYYY-MM-DD hh:mm:ss').format('ddd, DD MMM YYYY hh:mm:ss') + ' GMT';
     feed.addItem({
-      title: post.title,
+      title:       post.title,
       description: post.body,
-      link: post.url,
-      pubDate: post.date
+      link:        post.url,
+      pubDate:     post.date
     });
   });
 });
