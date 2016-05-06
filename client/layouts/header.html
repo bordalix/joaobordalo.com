@@ -1,0 +1,45 @@
+<template name="header">
+  <header class="header">
+    <div class="container">
+      <!-- Left side -->
+      <div class="header-left">
+        <a class="header-tab {{isActive 'home'}}" href="/">
+          Home
+        </a>
+        <a class="header-tab {{isActive 'about'}}" href="/about">
+          About
+        </a>
+        <a class="header-tab {{isActive 'contact'}}" href="/contact">
+          Contact
+        </a>
+      </div>
+
+      <!-- Hamburger menu (on mobile) -->
+      <span class="header-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+
+      <!-- Right side -->
+      <div class="header-right header-menu">
+        <span class="header-item">
+          <a href="/rss/posts">RSS</a>
+        </span>
+      </div>
+    </div>
+  </header>
+  
+  <section class="hero is-left">
+    <div class="hero-content">
+      <div class="container">
+        <h4 class="title is-4">
+          The place João Bordalo calls home
+        </h4>
+        <h6 class="subtitle is-6">
+          Simplicity, Usability, Productivity, Code, Design, Business and more
+        </h6>
+      </div>
+    </div>
+  </section>
+</template>

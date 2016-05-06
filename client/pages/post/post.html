@@ -1,0 +1,13 @@
+<template name="post">
+  {{> header}}
+  <div class="section">
+    <div class="container">
+      <div class="content">
+        <h5 class="title is-5">{{ title }}</h5>
+        <h6 class="subtitle is-7">{{ createdAt }}</h6>
+        {{{ body }}}
+        {{{ extended }}}
+      </div>
+    </div>
+  </div>
+</template>
