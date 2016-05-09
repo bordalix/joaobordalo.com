@@ -18,6 +18,16 @@ Router.route('/drucker', {
   template: 'drucker'
 });
 
+Router.route('/search', {
+  name: 'search',
+  template: 'search',
+  waitOn: function() {
+    return [
+      Meteor.subscribe('allPosts')
+    ];
+  }
+});
+
 Router.route('/traffic', {
   name: 'traffic',
   template: 'traffic'

@@ -12,11 +12,16 @@ RssFeed.publish( 'posts', function() {
   posts.forEach( function(post) { 
     post.title = '<![CDATA[' + post.title + ']]>';
     post.body  = post.body.replace(/(\r\n|\n|\r)/gm,"");
-    post.body  = '<![CDATA[' + post.body + ']]>';
+    if (post.extended) {
+      post.extended = post.extended.replace(/(\r\n|\n|\r)/gm,"");
+      post.text     = '<![CDATA[' + post.body + post.extended + ']]>';
+    } else {
+      post.text     = '<![CDATA[' + post.body + ']]>';
+    }
     post.date  = moment(post.createdAt, 'YYYY-MM-DD hh:mm:ss').format('ddd, DD MMM YYYY hh:mm:ss') + ' GMT';
     feed.addItem({
       title:       post.title,
-      description: post.body,
+      description: post.text,
       link:        post.url,
       pubDate:     post.date
     });

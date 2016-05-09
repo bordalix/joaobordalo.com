@@ -34,13 +34,33 @@ Template.home.onRendered(function() {
   });
 })
 
+Template.home.events({
+  'click .showMore': function(event) {
+    var postID = event.currentTarget.id;
+    var array  = Session.get("showMore") || [];
+    var clone  = array.slice(0);
+    clone.push(postID);
+    Session.set("showMore", clone);
+  }
+})
+
 Template.home.helpers({
   posts: function() {
     return Posts.find();
   },
   moreResults: function() {
-    return true;
     return !(Posts.find().count() < Session.get("itemsLimit"));
+  },
+  showMore: function(postID) {
+    var auxArray = Session.get("showMore") || [];
+    console.log(auxArray);
+    if (auxArray.indexOf(postID.toString()) == -1) {
+      console.log('false');
+      return false;
+    } else {
+      console.log('true');
+      return true;
+    }
   }
 })
 
