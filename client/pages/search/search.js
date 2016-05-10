@@ -10,6 +10,12 @@ Template.search.onCreated (
   }
 );
 
+Template.search.onRendered (
+  function() {
+    $("#searchinput").focus();
+  }
+)
+
 Template.search.events({
   'keyup #searchinput': function(event) {
     var expression = event.currentTarget.value;

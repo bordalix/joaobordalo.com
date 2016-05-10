@@ -6,3 +6,12 @@ html {
   .title.is-4 { font-size: 18px; }
   .subtitle.is-6 { font-size: 9px; }
 }
+
+.input.is-invisible {
+  background-color: transparent;
+  border: 0px solid;
+  border-radius: 0;
+  height: 40px;
+  width: 160px;
+  box-shadow: none;
+}
