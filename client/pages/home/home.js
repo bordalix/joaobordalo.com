@@ -53,12 +53,9 @@ Template.home.helpers({
   },
   showMore: function(postID) {
     var auxArray = Session.get("showMore") || [];
-    console.log(auxArray);
     if (auxArray.indexOf(postID.toString()) == -1) {
-      console.log('false');
       return false;
     } else {
-      console.log('true');
       return true;
     }
   }
@@ -73,13 +70,11 @@ function showMoreVisible() {
     
   if (target.offset().top < threshold) {
     if (!target.data("visible")) {
-      // console.log("target became visible (inside viewable area)");
       target.data("visible", true);
       Session.set("postsLimit", Session.get("postsLimit") + ITEMS_INCREMENT);
     }
   } else {
     if (target.data("visible")) {
-      // console.log("target became invisible (below viewable arae)");
       target.data("visible", false);
     }
   }        
