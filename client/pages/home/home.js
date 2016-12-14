@@ -14,7 +14,6 @@ Template.home.onRendered(function() {
     if (sub.ready()) {
       Tracker.afterFlush( function () {
       //https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
-      //var $allVideos = $("iframe[src^='//player.vimeo.com'], iframe[src^='//www.youtube.com'], object, embed"),
         var $allVideos = $("iframe"),
             $fluidEl = $("#container");
     	  $allVideos.each(function() {
@@ -50,7 +49,14 @@ Template.home.events({
 
 Template.home.helpers({
   posts: function() {
-    return Posts.find();
+    return Posts.find(
+      { },
+      { sort: { createdAt: -1 }}
+    ).fetch().map(function (post) {
+      post.body = post.body.replace('<iframe','<div class="placeholder"><iframe');
+      post.body = post.body.replace('</iframe>','</iframe></div>');
+      return post;
+    });
   },
   moreResults: function() {
     return !(Posts.find().count() < Session.get("itemsLimit"));

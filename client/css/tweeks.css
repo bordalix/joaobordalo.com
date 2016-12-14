@@ -11,8 +11,16 @@ html {
   background-color: transparent;
   border: 0px solid;
   border-radius: 0;
-  border-bottom: 1px dotted #ccc;
+  border-bottom: 1px dotted #d3d6db;
   height: 40px;
   width: 160px;
   box-shadow: none;
+}
+
+.placeholder {
+  width: 480;
+  height: 300;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('/images/placeholder.png');
 }
