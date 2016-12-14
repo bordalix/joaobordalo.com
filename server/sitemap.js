@@ -1,9 +1,18 @@
 sitemaps.add('/sitemap.xml', function () {
   const out = [];
-  Posts.find().fetch().forEach(function (page) {
+  ['/about','/contact','/search','/traffic'].forEach(function (page) {
     out.push({
-      page: page.url,
-      lastmod: page.createdAt,
+      page: 'http://joaobordalo.com' + page,
+      lastmod: new Date(),
+    });
+  })
+  Posts.find(
+    { },
+    { sort: { createdAt: -1 }}
+  ).fetch().forEach(function (post) {
+    out.push({
+      page: post.url,
+      lastmod: post.createdAt,
     });
   });
   return out;
