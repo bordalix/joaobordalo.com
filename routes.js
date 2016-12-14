@@ -38,7 +38,7 @@ Router.route('/traffic', {
 });
 
 Router.route('/articles/:year/:month/:day/:permalink',{
-  nane: 'post',
+  name: 'post',
   template: 'post',
   waitOn: function() {
     return [
@@ -48,12 +48,75 @@ Router.route('/articles/:year/:month/:day/:permalink',{
   data: function() {
     return Posts.findOne({ permalink: this.params.permalink });  
   }
-})
+});
+
+//
+// I wonder why Google is fetching this 2 URLs ('m' and 'mobile')
+
+Router.route('m/articles/:year/:month/:day/:permalink', {
+  name: 'post_m',
+  template: 'post',
+  waitOn: function() {
+    return [
+      Meteor.subscribe('thisPost', this.params.permalink)
+    ];
+  },
+  data: function() {
+    return Posts.findOne({ permalink: this.params.permalink });  
+  }
+});
+
+Router.route('mobile/articles/:year/:month/:day/:permalink', {
+  name: 'post_mobile',
+  template: 'post',
+  waitOn: function() {
+    return [
+      Meteor.subscribe('thisPost', this.params.permalink)
+    ];
+  },
+  data: function() {
+    return Posts.findOne({ permalink: this.params.permalink });  
+  }
+});
+
+//
+// Old URLs we have to maintain, redirected appropriately
+
+Router.route('/articles/:year/:month', function () {
+  this.response.writeHead(301, {
+    'Location': 'http://joaobordalo.com/'
+  });
+  this.response.end();
+}, {where: 'server'});
+
+Router.route('/pages/tag/:tag', function () {
+  this.response.writeHead(301, {
+    'Location': 'http://joaobordalo.com/'
+  });
+  this.response.end();
+}, {where: 'server'});
 
 Router.route('/pages/:stuff', function () {
   var redirectUrl = 'http://joaobordalo.com/' + this.params.stuff;
   this.response.writeHead(301, {
     'Location': redirectUrl
+  });
+  this.response.end();
+}, {where: 'server'});
+
+//
+// Google is trying to fetch this URLs, I wonder why
+
+Router.route('/m', function () {
+  this.response.writeHead(301, {
+    'Location': 'http://joaobordalo.com/'
+  });
+  this.response.end();
+}, {where: 'server'});
+
+Router.route('/mobile', function () {
+  this.response.writeHead(301, {
+    'Location': 'http://joaobordalo.com/'
   });
   this.response.end();
 }, {where: 'server'});
