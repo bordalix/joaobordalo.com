@@ -4,17 +4,17 @@ truncateText = function(text,length) {
   return (text);
 }
 
-Template.search.onCreated (
-  function() {
-    Session.set('filterexpression', "");
-  }
-);
+Template.search.onCreated (function() {
+  const text = 'Search João Bordalo blog posts';
+  DocHead.removeDocHeadAddedTags();
+  DocHead.setTitle(text);
+  DocHead.addMeta({name: "description", content: text});
+  Session.set('filterexpression', "");
+});
 
-Template.search.onRendered (
-  function() {
-    $("#searchinput").focus();
-  }
-)
+Template.search.onRendered (function() {
+  $("#searchinput").focus();
+});
 
 Template.search.events({
   'keyup #searchinput': function(event) {

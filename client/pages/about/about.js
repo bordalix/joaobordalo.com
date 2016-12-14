@@ -1,5 +1,5 @@
-Template.post.onCreated(function () {
-  const text = this.data.title;
+Template.about.onCreated(function () {
+  const text = 'About João Bordalo';
   DocHead.removeDocHeadAddedTags();
   DocHead.setTitle(text);
   DocHead.addMeta({name: "description", content: text});

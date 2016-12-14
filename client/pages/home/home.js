@@ -1,6 +1,10 @@
 var ITEMS_INCREMENT = 5;
 
 Template.home.onCreated(function() {
+  const text = 'The place João Bordalo calls home';
+  DocHead.removeDocHeadAddedTags();
+  DocHead.setTitle(text);
+  DocHead.addMeta({name: "description", content: text});
   Session.set('postsLimit', ITEMS_INCREMENT);
 });
 
