@@ -1,5 +1,5 @@
 # joaobordalo.com
-joaobordalo.com blog code in Meteor.
+[http://joaobordalo.com](http://joaobordalo.com) blog code in Meteor.
 
 Developed in ~~two~~ three days, needed some code to host my dying blog (which was in RoR) and decided to try Meteor.
 
