@@ -1,4 +1,4 @@
-.meteor/
+.gitignore
 .DS_Store
 public/files/traffic/
 public/images/traffic/
