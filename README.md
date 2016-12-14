@@ -17,6 +17,7 @@ SEO best practices implemented:
 - Dynamic sitemap generation
 - Open Graph tags
 - Analytics
+- RSS
 
 This don't offer a backoffice.
 
