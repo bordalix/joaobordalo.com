@@ -49,10 +49,7 @@ Template.home.events({
 
 Template.home.helpers({
   posts: function() {
-    return Posts.find(
-      { },
-      { sort: { createdAt: -1 }}
-    ).fetch().map(function (post) {
+    return Posts.find().fetch().map(function (post) {
       post.body = post.body.replace('<iframe','<div class="placeholder"><iframe');
       post.body = post.body.replace('</iframe>','</iframe></div>');
       return post;
