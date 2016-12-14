@@ -11,6 +11,7 @@ html {
   background-color: transparent;
   border: 0px solid;
   border-radius: 0;
+  border-bottom: 1px dotted #ccc;
   height: 40px;
   width: 160px;
   box-shadow: none;
