@@ -1,18 +1,11 @@
 <template name="search">
-  {{> header}}
-  <div class="section" style="height:100%">
-    <div class="container">
-      <div class="content">
-        <p class="control">
-          <input id="searchinput" class="input is-large is-invisible" type="text" placeholder="Search" autofocus>
-          <span class="help">Start writing, live results</span>
-        </p>
-        {{#each searchResults}}
-        <h5 class="title is-5"><a href="{{ url }}">{{ title }}</a></h5>
-        <h6 class="subtitle is-7">{{ createdAgo }}</h6>
-        <hr>
-        {{/each}}
-      </div>
-    </div>
-  </div>
+  <p class="control">
+    <input id="searchinput" class="input is-large is-invisible" type="text" placeholder="Search" autofocus>
+    <span class="help">Start writing, live results</span>
+  </p>
+  {{#each searchResults}}
+  <h5 class="title is-5"><a href="{{ url }}">{{ title }}</a></h5>
+  <h6 class="subtitle is-7">{{ createdAgo }}</h6>
+  <hr>
+  {{/each}}
 </template>

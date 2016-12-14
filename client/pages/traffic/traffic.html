@@ -1,22 +1,15 @@
 <template name="traffic">
-  {{> header}}
-  <div class="section">
-    <div class="container">
-      <div class="content">
-        <h4>Lisbon traffic</h4>
+  <h4>Lisbon traffic</h4>
 
-        <p>Accessing Lisbon from the South, via 25 de Abril bridge.</p>
-        <p>Images via <a href="http://www.viaverde.pt">Via Verde's website</a>.</p>
-        {{#each camsA2}}
-          <p><img class="imgcam" src="{{ this }}"></p>
-        {{/each}}
-        <hr />
-        <p>Leaving Lisbon to the South, via 25 de Abril bridge.</p>
-        <p>Images via <a href="http://www.viaverde.pt">Via Verde's website</a>.</p>
-        {{#each camsNS}}
-          <p><img class="imgcam" src="{{ this }}"></p>
-        {{/each}}
-      </div>
-    </div>
-  </div>
+  <p>Accessing Lisbon from the South, via 25 de Abril bridge.</p>
+  <p>Images via <a href="http://www.viaverde.pt">Via Verde's website</a>.</p>
+  {{#each camsA2}}
+    <p><img class="imgcam" src="{{ this }}"></p>
+  {{/each}}
+  <hr />
+  <p>Leaving Lisbon to the South, via 25 de Abril bridge.</p>
+  <p>Images via <a href="http://www.viaverde.pt">Via Verde's website</a>.</p>
+  {{#each camsNS}}
+    <p><img class="imgcam" src="{{ this }}"></p>
+  {{/each}}
 </template>

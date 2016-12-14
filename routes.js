@@ -1,3 +1,7 @@
+Router.configure({
+  layoutTemplate: 'appLayout'
+});
+
 Router.route('/', {
   name: 'home',
   template: 'home'

@@ -1,0 +1,11 @@
+<template name="appLayout">
+  {{> header}}
+  <div class="section">
+    <div class="container" id="container">
+      <div class="content">
+        {{> yield }}
+      </div>
+    </div>
+  </div>
+  {{> analytics}}
+</template>
