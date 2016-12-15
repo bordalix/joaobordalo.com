@@ -1,15 +1,14 @@
 sitemaps.add('/sitemap.xml', function () {
-  const out = [];
-  ['/about','/contact','/search','/traffic'].forEach(function (page) {
-    out.push({
+  let out = ['/about','/contact','/search','/traffic'].map(function (page) {
+    return {
       page: 'http://joaobordalo.com' + page,
       lastmod: new Date(),
-    });
-  })
+    };
+  });
   Posts.find(
     { },
-    { sort: { createdAt: -1 }}
-  ).fetch().forEach(function (post) {
+    { sort: { id: -1 }}
+  ).fetch().map(function (post) {
     out.push({
       page: post.url,
       lastmod: post.createdAt,

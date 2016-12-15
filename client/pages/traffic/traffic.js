@@ -1,9 +1,7 @@
 camURLsForIDs = function(array_of_ids) {
-  var camURLs = [];
-  array_of_ids.forEach( function( id, idx ) {
-    camURLs.push('/images/traffic/viaverde_' + id + '.jpeg?' + new Date().getTime());
-  })
-  return camURLs;
+  return array_of_ids.map(function (id) {
+    return '/images/traffic/viaverde_' + id + '.jpeg?' + new Date().getTime();
+  });
 }
 
 Template.traffic.onCreated(function () {

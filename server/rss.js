@@ -1,4 +1,4 @@
-RssFeed.publish( 'posts', function() {
+RssFeed.publish( 'posts', function () {
   var feed = this;
 
   feed.setValue( 'title', feed.cdata( 'João Bordalo blog feed' ) );
@@ -9,7 +9,7 @@ RssFeed.publish( 'posts', function() {
   feed.setValue( 'ttl', 1 );
   
   var posts = Posts.find({},{sort:{createdAt:-1}});
-  posts.forEach( function(post) { 
+  posts.map(function (post) { 
     post.title = '<![CDATA[' + post.title + ']]>';
     post.body  = post.body.replace(/(\r\n|\n|\r)/gm,"");
     if (post.extended) {
@@ -25,5 +25,6 @@ RssFeed.publish( 'posts', function() {
       link:        post.url,
       pubDate:     post.date
     });
+    return post;
   });
 });
