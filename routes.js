@@ -2,6 +2,20 @@ Router.configure({
   layoutTemplate: 'appLayout'
 });
 
+// https://forums.meteor.com/t/how-to-redirect-non-www-to-www-in-meteor/1826/2
+Router.route('/(.*)', function() {
+  var fullUrl, host;
+  host = this.request.headers.host;
+  fullUrl = "http://" + host + this.request.url;
+  if (host.indexOf("www") === 0) {
+    this.response.writeHead(301, {
+      Location: fullUrl.replace("www.", "")
+    });
+    return this.response.end();
+  }
+  this.next();
+}, {where: "server"});
+
 Router.route('/', {
   name: 'home',
   template: 'home'
