@@ -1,5 +1,6 @@
 Router.configure({
-  layoutTemplate: 'appLayout'
+  layoutTemplate: 'appLayout',
+  notFoundTemplate: 'notFound'
 });
 
 // https://forums.meteor.com/t/how-to-redirect-non-www-to-www-in-meteor/1826/2
