@@ -56,7 +56,7 @@ Template.home.helpers({
     });
   },
   moreResults: function() {
-    return !(Posts.find().count() < Session.get("itemsLimit"));
+    return !(Posts.find().count() < Session.get("postsLimit"));
   },
   showMore: function(postID) {
     var auxArray = Session.get("showMore") || [];
