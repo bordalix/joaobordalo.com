@@ -18,8 +18,8 @@ Template.search.onRendered (function() {
 
 Template.search.events({
   'keyup #searchinput': function(event) {
-    var expression = event.currentTarget.value;
-    Session.set('filterexpression', expression);
+    if (event.which === 13) event.currentTarget.blur();
+    Session.set('filterexpression', event.currentTarget.value);
   }
 });
 
