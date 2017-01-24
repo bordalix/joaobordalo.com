@@ -37,6 +37,11 @@ Router.route('/drucker', {
   template: 'drucker'
 });
 
+Router.route('/iscore', {
+  name: 'iscore',
+  template: 'iscore'
+});
+
 Router.route('/search', {
   name: 'search',
   template: 'search',
