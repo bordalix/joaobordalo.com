@@ -7,12 +7,19 @@ Router.configure({
 Router.route('/(.*)', function() {
   var fullUrl, host;
   host = this.request.headers.host;
-  fullUrl = "http://" + host + this.request.url;
-  if (host.indexOf("www") === 0) {
+  if (host.indexOf("iscore.pt") != -1) {
     this.response.writeHead(301, {
-      Location: fullUrl.replace("www.", "")
+      Location: "http://joaobordalo.com/iscore"
     });
     return this.response.end();
+  } else {
+    fullUrl = "http://" + host + this.request.url;
+    if (host.indexOf("www") === 0) {
+      this.response.writeHead(301, {
+        Location: fullUrl.replace("www.", "")
+      });
+      return this.response.end();
+    }
   }
   this.next();
 }, {where: "server"});
