@@ -24,3 +24,18 @@ html {
   background-size: contain;
   background-image: url('/images/placeholder.png');
 }
+
+/* via https://osvaldas.info/auto-hide-sticky-header */
+
+.header {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+
+.hero {
+  margin-top: 50px; /* same as .header height */
+}
