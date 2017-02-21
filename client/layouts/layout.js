@@ -30,6 +30,10 @@ Template.layout.onCreated(function() {
   $(window).on('scroll', layoutScrollHandler);
 });
 
+Template.layout.onRendered(function() {
+  makeYoutubeResponsive();
+});
+
 Template.layout.onDestroyed(function() {
   $(window).off('scroll', layoutScrollHandler);
 });

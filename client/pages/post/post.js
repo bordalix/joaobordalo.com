@@ -4,3 +4,16 @@ Template.post.onCreated(function () {
   DocHead.setTitle(text);
   DocHead.addMeta({name: "description", content: text});
 });
+
+Template.post.onRendered(function () {
+  makeYoutubeResponsive();
+});
+
+Template.post.helpers({
+  previousPost() {
+    return Posts.findOne({id: {$lt: this.id}});
+  },
+  nextPost() {
+    return Posts.findOne({id: {$gt: this.id}});
+  }
+})
