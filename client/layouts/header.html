@@ -1,24 +1,13 @@
 <template name="header">
-  <header class="header">
-    <div class="container">
-      <!-- Left side -->
-      <div class="header-left">
-        {{> menu }}
-      </div>
+  {{> menu }}
+  {{> hero }}
+</template>
 
-      <!-- Right side -->
-      <div class="header-right header-menu">
-        <span class="header-item">
-          <a href="http://feeds.feedburner.com/joaobordalo">RSS</a>
-        </span>
-      </div>
-    </div>
-  </header>
-  
-  <section class="hero is-left">
-    <div class="hero-content">
+<template name="hero">
+  <section class="hero">
+    <div class="hero-body">
       <div class="container">
-        <h4 class="title is-4">
+        <h4 class="title is-5">
           The place João Bordalo calls home
         </h4>
         <h6 class="subtitle is-6">
