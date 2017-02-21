@@ -3,4 +3,32 @@
   <h6 class="subtitle is-7">{{ createdAgo }}</h6>
   {{{ body }}}
   {{{ extended }}}
+  <nav class="level is-mobile" style="margin:1rem 0">
+  {{# if previousPost}}
+    <!-- Left side -->
+    <div class="level-left">
+      <div class="level-item">
+      {{# with previousPost}}
+        <p>
+          Previous post<br />
+          <a href="{{url}}">{{ title }}</a>
+        </p>
+       {{/ with }}  
+      </div>
+    </div>
+  {{/ if }}
+  {{# if nextPost}}
+    <!-- Right side -->
+    <div class="level-right">
+      <div class="level-item">
+      {{# with nextPost}}
+        <p class="is-text-right">
+          Next post<br />
+          <a href="{{url}}">{{ title }}</a>
+        </p>
+      {{/ with }}
+      </div>
+    </div>
+  {{/ if }}
+  </nav>
 </template>

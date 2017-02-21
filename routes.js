@@ -69,11 +69,13 @@ Router.route('/articles/:year/:month/:day/:permalink',{
   template: 'post',
   waitOn: function() {
     return [
-      Meteor.subscribe('thisPost', this.params.permalink)
+      Meteor.subscribe('thisPost', this.params.permalink),
+      Meteor.subscribe('nextPost', this.params.permalink),
+      Meteor.subscribe('previousPost', this.params.permalink)
     ];
   },
   data: function() {
-    return Posts.findOne({ permalink: this.params.permalink });  
+    return Posts.findOne({ permalink: this.params.permalink });
   }
 });
 
