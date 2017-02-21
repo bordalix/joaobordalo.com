@@ -1,16 +1,17 @@
 <template name="post">
-  <h5 class="title is-5"><a href="{{ url }}">{{ title }}</a></h5>
-  <h6 class="subtitle is-7">{{ createdAgo }}</h6>
-  {{{ body }}}
-  {{{ extended }}}
+  {{> postHeader }}
+  <div class="content">
+    {{{ body }}}
+    {{{ extended }}}
+  </div>
   <nav class="level is-mobile" style="margin:1rem 0">
-  {{# if previousPost}}
+  {{# if previousPost }}
     <!-- Left side -->
     <div class="level-left">
       <div class="level-item">
-      {{# with previousPost}}
+      {{# with previousPost }}
         <p>
-          Previous post<br />
+          <span class="content is-small"><strong>&laquo; Previous post</strong></span><br />
           <a href="{{url}}">{{ title }}</a>
         </p>
        {{/ with }}  
@@ -22,8 +23,8 @@
     <div class="level-right">
       <div class="level-item">
       {{# with nextPost}}
-        <p class="is-text-right">
-          Next post<br />
+        <p class="has-text-right">
+          <span class="content is-small"><strong>Next post &raquo;</strong></span><br />
           <a href="{{url}}">{{ title }}</a>
         </p>
       {{/ with }}
@@ -31,4 +32,9 @@
     </div>
   {{/ if }}
   </nav>
+</template>
+
+<template name="postHeader">
+  <h4 class="title is-4"><a href="{{ url }}">{{ title }}</a></h4>
+  <h6 class="subtitle is-6">{{ createdAgo }}</h6>
 </template>

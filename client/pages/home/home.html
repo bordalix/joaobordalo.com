@@ -1,17 +1,18 @@
 <template name="home">
   {{#each posts}}
-    <h5 class="title is-5"><a href="{{ url }}">{{ title }}</a></h5>
-    <h6 class="subtitle is-7">{{ createdAgo }}</h6>
-    {{{ body }}}
-    {{#if extended }}
-      {{#if showMore id}}
-        {{{ extended }}}
-      {{else}}
-        <p class="is-text-centered">
-          <a id={{ id }} class="button is-small is-primary is-outlined showMore">Show more</a>
-        </p>
+    {{> postHeader }}
+    <div class="content">
+      {{{ body }}}
+      {{#if extended }}
+        {{#if showMore id}}
+          {{{ extended }}}
+        {{else}}
+          <p class="has-text-centered">
+            <a id={{ id }} class="button is-small is-primary is-outlined showMore">Show more</a>
+          </p>
+        {{/if}}
       {{/if}}
-    {{/if}}
+    </div>
     <hr>
   {{/each}}
   {{#if moreResults}}
