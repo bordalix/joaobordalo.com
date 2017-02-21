@@ -2,11 +2,6 @@ html {
   background-color:#fff;
 }
 
-@media screen and (max-width: 320px) {
-  .title.is-4 { font-size: 18px; }
-  .subtitle.is-6 { font-size: 9px; }
-}
-
 .input.is-invisible {
   background-color: transparent;
   border: 0px solid;
@@ -27,7 +22,7 @@ html {
 
 /* via https://osvaldas.info/auto-hide-sticky-header */
 
-.header {
+.fixed_menu {
   width: 100%;
   height: 50px;
   position: fixed;
@@ -35,107 +30,17 @@ html {
   top: 0;
   left: 0;
 }
+.fixed_menu_dark > .container > .nav {
+  background-color: #000;
+}
+
+.fixed_menu_dark > .container > .nav a.nav-item {
+    color: #ccc;
+}
+.fixed_menu_dark > .container > .nav a.nav-item.is-active {
+    color: #fff;
+}
 
 .hero {
   margin-top: 50px; /* same as .header height */
-}
-
-/* levels, from new Bulma */
-
-.level-item {
-  align-items: center;
-  display: flex;
-  flex-basis: auto;
-  flex-grow: 0;
-  flex-shrink: 0;
-  justify-content: center;
-}
-
-.level-item .title,
-.level-item .subtitle {
-  margin-bottom: 0;
-}
-
-@media screen and (max-width: 768px) {
-  .level-item:not(:last-child) {
-    margin-bottom: 0.75rem;
-  }
-}
-
-.level-left,
-.level-right {
-  flex-basis: auto;
-  flex-grow: 0;
-  flex-shrink: 0;
-}
-
-.level-left .level-item:not(:last-child),
-.level-right .level-item:not(:last-child) {
-  margin-right: 0.75rem;
-}
-
-.level-left .level-item.is-flexible,
-.level-right .level-item.is-flexible {
-  flex-grow: 1;
-}
-
-.level-left {
-  align-items: center;
-  justify-content: flex-start;
-}
-
-@media screen and (min-width: 769px) {
-  .level-left {
-    display: flex;
-  }
-}
-
-.level-right {
-  align-items: center;
-  justify-content: flex-end;
-}
-
-@media screen and (min-width: 769px) {
-  .level-right {
-    display: flex;
-  }
-}
-
-.level {
-  align-items: center;
-  justify-content: space-between;
-}
-
-.level:not(:last-child) {
-  margin-bottom: 1.5rem;
-}
-
-.level code {
-  border-radius: 3px;
-}
-
-.level img {
-  display: inline-block;
-  vertical-align: top;
-}
-
-.level.is-mobile {
-  display: flex;
-}
-
-.level.is-mobile > .level-item:not(:last-child) {
-  margin-bottom: 0;
-}
-
-.level.is-mobile > .level-item:not(.is-narrow) {
-  flex-grow: 1;
-}
-
-@media screen and (min-width: 769px) {
-  .level {
-    display: flex;
-  }
-  .level > .level-item:not(.is-narrow) {
-    flex-grow: 1;
-  }
 }

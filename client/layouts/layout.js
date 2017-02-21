@@ -1,13 +1,25 @@
 // via https://osvaldas.info/auto-hide-sticky-header
 var layoutScrollHandler = function(e) {
+  hasElementClass    = function( element, className ){ return element.classList ? element.classList.contains( className ) : new RegExp( '(^| )' + className + '( |$)', 'gi' ).test( element.className ); },
+	addElementClass    = function( element, className ){ element.classList ? element.classList.add( className ) : element.className += ' ' + className; },
+	removeElementClass = function( element, className ){ element.classList ? element.classList.remove( className ) : element.className = element.className.replace( new RegExp( '(^|\\b)' + className.split( ' ' ).join( '|' ) + '(\\b|$)', 'gi' ), ' ' ); };
   if (typeof wScrollBefore === 'undefined') wScrollBefore  = 0;
-  let element	       = document.querySelector('.header');
-  let elHeight       = element.offsetHeight;
-  let dHeight			   = document.body.offsetHeight;
-  let wHeight			   = window.innerHeight;
-  let wScrollCurrent = window.pageYOffset;
-  let wScrollDiff    = wScrollBefore - wScrollCurrent;
-  let elTop          = parseInt(window.getComputedStyle(element).getPropertyValue('top')) + wScrollDiff;
+  let elClassNarrow	 = 'fixed_menu_dark',
+			elNarrowOffset = 50,
+      element	       = document.querySelector('.fixed_menu'),
+      elHeight       = element.offsetHeight,
+      dHeight			   = document.body.offsetHeight,
+      wHeight			   = window.innerHeight,
+      wScrollCurrent = window.pageYOffset,
+      wScrollDiff    = wScrollBefore - wScrollCurrent,
+      elTop          = parseInt(window.getComputedStyle(element).getPropertyValue('top')) + wScrollDiff;
+  if (wScrollCurrent > elNarrowOffset) { // toggles "narrow" classname
+  	if (!hasElementClass(element, elClassNarrow)) {
+      addElementClass( element, elClassNarrow );
+    }
+  } else {
+    removeElementClass( element, elClassNarrow );
+  }
   if (wScrollCurrent <= 0) { // scrolled to the very top; element sticks to the top
     element.style.top = '0px';
   } else {
