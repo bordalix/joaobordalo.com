@@ -4,10 +4,12 @@
   "icons": [
     {
       "src": "/images/launcher-icon.png",
-      "sizes": "144x144",
+      "sizes": "192x192",
       "type": "image/png"
     }
   ],
-  "start_url": "https://joaobordalo.com",
+  "start_url": "/",
+  "background_color": "#1fc8db",
+  "theme_color": "#1fc8db",
   "display": "standalone"
 }
