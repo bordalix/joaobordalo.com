@@ -1,0 +1,33 @@
+<template name="postHeader">
+  <h4 class="title is-4"><a href="{{ url }}">{{ title }}</a></h4>
+  <h6 class="subtitle is-6">{{ createdAgo }}
+    {{# if speechSynthesis }}
+      &middot;
+      {{# if activeSpeech }}
+        {{# if speechStoped }}
+          <a href="" class="hearit">
+            hear it <span class="icon is-control"><i class="fa fa-volume-up speech-player-controls"></i></span>
+          </a>
+        {{ else }}
+          {{# if speechPlaying }}
+            <a href="" class="pauseit">
+              pause <span class="icon is-control"><i class="fa fa-pause speech-player-controls"></i></span>
+            </a>
+          {{ else }}
+            <a href="" class="resumeit">
+              resume <span class="icon is-control"><i class="fa fa-play speech-player-controls"></i></span>
+            </a>
+          {{/ if }}
+          &middot;
+          <a href="" class="stopit">
+            stop <span class="icon is-control"><i class="fa fa-stop speech-player-controls"></i></span>
+          </a>
+        {{/ if }}
+      {{ else }}
+        <a href="" class="hearit">
+          hear it <span class="icon is-control"><i class="fa fa-volume-up speech-player-controls"></i></span>
+        </a>
+      {{/ if }}
+    {{/ if}}
+  </h6>
+</template>

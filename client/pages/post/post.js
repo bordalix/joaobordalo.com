@@ -16,4 +16,4 @@ Template.post.helpers({
   nextPost() {
     return Posts.findOne({id: {$gt: this.id}});
   }
-})
+});
