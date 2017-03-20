@@ -4,6 +4,12 @@ Template.postHeader.onCreated(function () {
   }
 });
 
+Template.postHeader.onDestroyed(function () {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+  }
+});
+
 Template.postHeader.helpers({
   speechSynthesis() {
     return 'speechSynthesis' in window;
@@ -26,9 +32,7 @@ Template.postHeader.events({
   'click .hearit'(event, instance) {
     if ('speechSynthesis' in window) {
       window.speechSynthesis.cancel();
-      console.log(this);
       Session.set('activeSpeech', this.id);
-      console.log(Session.get('activeSpeech'));
       let to_text  = this.body.replace(/<.*?>/g,'');
       if (this.extended)
         to_text = to_text + this.extended.replace(/<.*?>/g,'');
