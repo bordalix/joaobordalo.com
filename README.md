@@ -1,5 +1,5 @@
 # joaobordalo.com
-[http://joaobordalo.com](http://joaobordalo.com) blog code in Meteor.
+[https://joaobordalo.com](http://joaobordalo.com) blog code in Meteor.
 
 Developed in ~~two~~ three days, needed some code to host my dying blog (which was in RoR) and decided to try Meteor.
 
@@ -7,17 +7,26 @@ Some design patterns implemented:
 
 - Live search
 - Infinite scrolling
-- Fluid iframes (for embeded videos)
+- Fluid iframes (for embedded videos)
 - Image placeholders aka Lazy Loading
+- Previous and next post navigation
+- Floating header
 
 SEO best practices implemented:
 
 - Dynamic title and meta description
 - Server Side Rendering via prerender.io
+- Analytics (with event generation)
 - Dynamic sitemap generation
+- SSL and force SSL
 - Open Graph tags
-- Analytics
+- Service worker
 - RSS
+
+Accessibility:
+
+- Usage of speech synthesis for posts reading
+- Follows WAI-ARIA recommendations
 
 This don't offer a backoffice.
 
