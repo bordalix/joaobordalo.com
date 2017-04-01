@@ -10,6 +10,7 @@ Template.search.onCreated (function() {
   DocHead.setTitle(text);
   DocHead.addMeta({name: "description", content: text});
   Session.set('filterexpression', "");
+  Session.set('searchedsomething', false);
 });
 
 Template.search.onRendered (function() {
@@ -20,6 +21,10 @@ Template.search.events({
   'keyup #searchinput': function(event) {
     if (event.which === 13) event.currentTarget.blur();
     Session.set('filterexpression', event.currentTarget.value);
+    if (!Session.get('searchedsomething')) {
+      analytics.track('Searched something');
+      Session.set('searchedsomething', true);
+    }
   }
 });
 

@@ -30,6 +30,7 @@ Template.postHeader.helpers({
 
 Template.postHeader.events({
   'click .hearit'(event, instance) {
+    analytics.track("Play speech synthesis");
     if ('speechSynthesis' in window) {
       window.speechSynthesis.cancel();
       Session.set('activeSpeech', this.id);
@@ -43,18 +44,21 @@ Template.postHeader.events({
     }
   },
   'click .pauseit'(event, instance) {
+    analytics.track("Pause speech synthesis");
     if ('speechSynthesis' in window) {
       Template.instance().speechStatus.set('paused');
       window.speechSynthesis.pause();
     }
   },
   'click .resumeit'(event, instance) {
+    analytics.track("Resume speech synthesis");
     if ('speechSynthesis' in window) {
       Template.instance().speechStatus.set('playing');
       window.speechSynthesis.resume();
     }
   },
   'click .stopit'(event, instance) {
+    analytics.track("Stop speech synthesis");
     if ('speechSynthesis' in window) {
       Template.instance().speechStatus.set('stoped');
       window.speechSynthesis.cancel();
