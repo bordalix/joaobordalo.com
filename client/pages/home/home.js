@@ -15,6 +15,7 @@ Template.home.onRendered(function() {
       Tracker.afterFlush(makeYoutubeResponsive);
     }
   });
+  setTimeout(function() { Meteor.Gists.render() }, 1000);
 });
 
 Template.home.events({
@@ -24,6 +25,7 @@ Template.home.events({
     const clone  = array.slice(0);
     clone.push(postID);
     Session.set('showMore', clone);
+    setTimeout(function() { Meteor.Gists.render() }, 1000);
   }
 });
 
