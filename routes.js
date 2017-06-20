@@ -4,26 +4,26 @@ Router.configure({
   notFoundTemplate: 'notFound'
 });
 
+/* eslint-disable consistent-return */
 // https://forums.meteor.com/t/how-to-redirect-non-www-to-www-in-meteor/1826/2
 Router.route('/(.*)', function() {
-  var fullUrl, host;
-  host = this.request.headers.host;
-  if (host.indexOf("iscore.pt") != -1) {
+  const host = this.request.headers.host;
+  if (host.indexOf('iscore.pt') !== -1) {
     this.response.writeHead(301, {
-      Location: "http://joaobordalo.com/iscore"
+      Location: 'http://joaobordalo.com/iscore'
     });
     return this.response.end();
-  } else {
-    fullUrl = "http://" + host + this.request.url;
-    if (host.indexOf("www") === 0) {
-      this.response.writeHead(301, {
-        Location: fullUrl.replace("www.", "")
-      });
-      return this.response.end();
-    }
+  }
+  const fullUrl = `http://${host}${this.request.url}`;
+  if (host.indexOf('www') === 0) {
+    this.response.writeHead(301, {
+      Location: fullUrl.replace('www.', '')
+    });
+    return this.response.end();
   }
   this.next();
-}, {where: "server"});
+}, { where: 'server' });
+/* eslint-enable consistent-return */
 
 Router.route('/', {
   name: 'home',
@@ -53,7 +53,7 @@ Router.route('/iscore', {
 Router.route('/search', {
   name: 'search',
   template: 'search',
-  waitOn: function() {
+  waitOn() {
     return [
       Meteor.subscribe('allPosts')
     ];
@@ -65,17 +65,17 @@ Router.route('/traffic', {
   template: 'traffic'
 });
 
-Router.route('/articles/:year/:month/:day/:permalink',{
+Router.route('/articles/:year/:month/:day/:permalink', {
   name: 'post',
   template: 'post',
-  waitOn: function() {
+  waitOn() {
     return [
       Meteor.subscribe('thisPost', this.params.permalink),
       Meteor.subscribe('nextPost', this.params.permalink),
       Meteor.subscribe('previousPost', this.params.permalink)
     ];
   },
-  data: function() {
+  data() {
     return Posts.findOne({ permalink: this.params.permalink });
   }
 });
@@ -86,26 +86,26 @@ Router.route('/articles/:year/:month/:day/:permalink',{
 Router.route('m/articles/:year/:month/:day/:permalink', {
   name: 'post_m',
   template: 'post',
-  waitOn: function() {
+  waitOn() {
     return [
       Meteor.subscribe('thisPost', this.params.permalink)
     ];
   },
-  data: function() {
-    return Posts.findOne({ permalink: this.params.permalink });  
+  data() {
+    return Posts.findOne({ permalink: this.params.permalink });
   }
 });
 
 Router.route('mobile/articles/:year/:month/:day/:permalink', {
   name: 'post_mobile',
   template: 'post',
-  waitOn: function() {
+  waitOn() {
     return [
       Meteor.subscribe('thisPost', this.params.permalink)
     ];
   },
-  data: function() {
-    return Posts.findOne({ permalink: this.params.permalink });  
+  data() {
+    return Posts.findOne({ permalink: this.params.permalink });
   }
 });
 
@@ -114,39 +114,39 @@ Router.route('mobile/articles/:year/:month/:day/:permalink', {
 
 Router.route('/articles/:year/:month', function () {
   this.response.writeHead(301, {
-    'Location': 'http://joaobordalo.com/'
+    Location: 'http://joaobordalo.com/'
   });
   this.response.end();
-}, {where: 'server'});
+}, { where: 'server' });
 
 Router.route('/pages/tag/:tag', function () {
   this.response.writeHead(301, {
-    'Location': 'http://joaobordalo.com/'
+    Location: 'http://joaobordalo.com/'
   });
   this.response.end();
-}, {where: 'server'});
+}, { where: 'server' });
 
 Router.route('/pages/:stuff', function () {
-  var redirectUrl = 'http://joaobordalo.com/' + this.params.stuff;
+  const redirectUrl = `http://joaobordalo.com/${this.params.stuff}`;
   this.response.writeHead(301, {
-    'Location': redirectUrl
+    Location: redirectUrl
   });
   this.response.end();
-}, {where: 'server'});
+}, { where: 'server' });
 
 //
 // Google is trying to fetch this URLs, I wonder why
 
 Router.route('/m', function () {
   this.response.writeHead(301, {
-    'Location': 'http://joaobordalo.com/'
+    Location: 'http://joaobordalo.com/'
   });
   this.response.end();
-}, {where: 'server'});
+}, { where: 'server' });
 
 Router.route('/mobile', function () {
   this.response.writeHead(301, {
-    'Location': 'http://joaobordalo.com/'
+    Location: 'http://joaobordalo.com/'
   });
   this.response.end();
-}, {where: 'server'});
+}, { where: 'server' });

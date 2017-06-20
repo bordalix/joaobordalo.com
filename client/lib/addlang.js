@@ -1,3 +1,3 @@
 Meteor.startup(function() {
-   $('html').attr('lang', 'en');
+  $('html').attr('lang', 'en');
 });

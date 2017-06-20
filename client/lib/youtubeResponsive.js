@@ -1,7 +1,7 @@
+// https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
 makeYoutubeResponsive = function () {
-//https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
-  var $allVideos = $("iframe"),
-      $fluidEl = $("#container");
+  const $allVideos = $('iframe');
+  const $fluidEl = $('#container');
   $allVideos.each(function() {
     $(this)
       // jQuery .data does not work on object/embed elements
@@ -10,12 +10,12 @@ makeYoutubeResponsive = function () {
       .removeAttr('width');
   });
   $(window).resize(function() {
-    var newWidth = $fluidEl.width();
+    const newWidth = $fluidEl.width();
     $allVideos.each(function() {
-      var $el = $(this);
+      const $el = $(this);
       $el
          .width(newWidth)
          .height(newWidth * $el.attr('data-aspectRatio'));
     });
   }).resize();
-}
+};

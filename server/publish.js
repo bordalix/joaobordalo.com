@@ -1,40 +1,44 @@
-Meteor.publish('posts', function (limit) {
-  return Posts.find({}, { sort: { id: -1 }, limit: limit });
+Meteor.publish('posts', function (maxPosts) {
+  check(maxPosts, Number);
+  return Posts.find({ }, { sort: { id: -1 }, limit: maxPosts });
 });
 
-Meteor.startup(function () {  
-  Posts._ensureIndex({id: 1});
+Meteor.startup(function () {
+  Posts._ensureIndex({ id: 1 });
 });
 
-Meteor.publish('thisPost', function (permalink) {
-  return Posts.find({permalink: permalink});
+Meteor.publish('thisPost', function (link) {
+  check(link, String);
+  return Posts.find({ permalink: link });
 });
 
-Meteor.publish('previousPost', function (permalink) {
-  let thisPostID = Posts.findOne({permalink: permalink}).id;
+Meteor.publish('previousPost', function (link) {
+  check(link, String);
+  const thisPostID = Posts.findOne({ permalink: link }).id;
   return Posts.find(
-    { id: { $lt: thisPostID }},
+    { id: { $lt: thisPostID } },
     {
-      sort: { id: -1 }, 
+      sort: { id: -1 },
       limit: 1
     }
-  )
+  );
 });
 
-Meteor.publish('nextPost', function (permalink) {
-  let thisPostID = Posts.findOne({permalink: permalink}).id;
+Meteor.publish('nextPost', function (link) {
+  check(link, String);
+  const thisPostID = Posts.findOne({ permalink: link }).id;
   return Posts.find(
-    { id: { $gt: thisPostID }},
+    { id: { $gt: thisPostID } },
     {
-      sort: { id: 1 }, 
+      sort: { id: 1 },
       limit: 1
     }
-  )
+  );
 });
 
 
-Meteor.startup(function () {  
-  Posts._ensureIndex({permalink: 1});
+Meteor.startup(function () {
+  Posts._ensureIndex({ permalink: 1 });
 });
 
 Meteor.publish('allPosts', function () {

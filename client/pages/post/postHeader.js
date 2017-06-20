@@ -31,39 +31,40 @@ Template.postHeader.helpers({
 });
 
 Template.postHeader.events({
-  'click .hearit'(event, instance) {
-    analytics.track("Play speech synthesis"); // generate event in analytics
+  'click .hearit'() {
+    analytics.track('Play speech synthesis'); // generate event in analytics
     if ('speechSynthesis' in window) {
       window.speechSynthesis.cancel(); // stops reading
       Session.set('activeSpeech', this.id); // active post
-      let to_text  = this.body.replace(/<.*?>/g,''); // delete html tags
-      if (this.extended)
-        to_text = to_text + this.extended.replace(/<.*?>/g,''); // delete html tags
-      let to_speak = new SpeechSynthesisUtterance(to_text); // build speech object
-      to_speak.rate = 1.1; // like it more a little bit faster
+      let toText  = this.body.replace(/<.*?>/g, ''); // delete html tags
+      if (this.extended) {
+        toText += this.extended.replace(/<.*?>/g, ''); // delete html tags
+      }
+      const toSpeak = new SpeechSynthesisUtterance(toText); // build speech object
+      toSpeak.rate = 1.1; // like it more a little bit faster
       Template.instance().speechStatus.set('playing'); // update state machine
-      window.speechSynthesis.speak(to_speak); // read it out loud
+      window.speechSynthesis.speak(toSpeak); // read it out loud
     }
   },
-  'click .pauseit'(event, instance) {
-    analytics.track("Pause speech synthesis");
+  'click .pauseit'() {
+    analytics.track('Pause speech synthesis');
     if ('speechSynthesis' in window) {
       Template.instance().speechStatus.set('paused'); // update state machine
       window.speechSynthesis.pause();
     }
   },
-  'click .resumeit'(event, instance) {
-    analytics.track("Resume speech synthesis");
+  'click .resumeit'() {
+    analytics.track('Resume speech synthesis');
     if ('speechSynthesis' in window) {
       Template.instance().speechStatus.set('playing'); // update state machine
       window.speechSynthesis.resume();
     }
   },
-  'click .stopit'(event, instance) {
-    analytics.track("Stop speech synthesis");
+  'click .stopit'() {
+    analytics.track('Stop speech synthesis');
     if ('speechSynthesis' in window) {
       Template.instance().speechStatus.set('stoped'); // update state machine
       window.speechSynthesis.cancel();
     }
   }
-})
+});

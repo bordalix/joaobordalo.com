@@ -1,18 +1,18 @@
 sitemaps.add('/sitemap.xml', function () {
-  let out = ['/about','/contact','/search','/traffic'].map(function (page) {
+  const pages = ['/about', '/contact', '/search', '/traffic'].map(function (page) {
     return {
-      page: 'http://joaobordalo.com' + page,
+      page: `http://joaobordalo.com${page}`,
       lastmod: new Date(),
     };
   });
-  Posts.find(
+  const posts = Posts.find(
     { },
-    { sort: { id: -1 }}
+    { sort: { id: -1 } }
   ).fetch().map(function (post) {
-    out.push({
+    return {
       page: post.url,
       lastmod: post.createdAt,
-    });
+    };
   });
-  return out;
+  return pages.concat(posts);
 });
