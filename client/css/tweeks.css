@@ -44,3 +44,13 @@ html {
 .hero {
   margin-top: 50px; /* same as .header height */
 }
+
+/* lazy loading images */
+
+img {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+img[data-src] {
+  opacity: 0;
+}

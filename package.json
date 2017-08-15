@@ -46,7 +46,8 @@
       "truncateText": true,
       "analytics": false,
       "$": false,
-      "makeYoutubeResponsive": true
+      "makeYoutubeResponsive": true,
+      "lazyLoadImages": true
     }
   }
 }
