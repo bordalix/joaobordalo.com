@@ -6,7 +6,7 @@ Template.post.onCreated(function () {
 });
 
 Template.post.onRendered(function () {
-  lazyLoadImages();
+  lazyLoadImagesAndIframes();
   Meteor.Gists.render();
   makeYoutubeResponsive();
 });

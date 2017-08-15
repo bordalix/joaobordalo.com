@@ -47,7 +47,7 @@
       "analytics": false,
       "$": false,
       "makeYoutubeResponsive": true,
-      "lazyLoadImages": true
+      "lazyLoadImagesAndIframes": true
     }
   }
 }

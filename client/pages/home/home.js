@@ -13,7 +13,7 @@ Template.home.onRendered(function() {
     const sub = this.subscribe('posts', Session.get('postsLimit'));
     if (sub.ready()) {
       Tracker.afterFlush(makeYoutubeResponsive);
-      Tracker.afterFlush(lazyLoadImages);
+      Tracker.afterFlush(lazyLoadImagesAndIframes);
     }
   });
   setTimeout(function() { Meteor.Gists.render(); }, 1000);
