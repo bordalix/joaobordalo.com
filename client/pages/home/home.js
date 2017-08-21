@@ -16,7 +16,7 @@ Template.home.onRendered(function() {
       Tracker.afterFlush(lazyLoadImagesAndIframes);
     }
   });
-  setTimeout(function() { Meteor.Gists.render(); }, 1000);
+  Meteor.setTimeout(function() { Meteor.Gists.render(); }, 1000);
 });
 
 Template.home.events({
@@ -26,7 +26,7 @@ Template.home.events({
     const clone  = array.slice(0);
     clone.push(postID);
     Session.set('showMore', clone);
-    setTimeout(function() { Meteor.Gists.render(); }, 1000);
+    Meteor.setTimeout(function() { Meteor.Gists.render(); }, 1000);
   }
 });
 
@@ -55,7 +55,7 @@ Template.home.helpers({
 function showMoreVisible() {
   const target = $('#showMoreResults');
   if (!target.length) return;
-  const threshold = ($(window).scrollTop() + $(window).height()) - target.height();
+  const threshold = $(window).scrollTop() + ($(window).height() * 2);
   if (target.offset().top < threshold) {
     if (!target.data('visible')) {
       target.data('visible', true);

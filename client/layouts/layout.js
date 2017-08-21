@@ -1,7 +1,7 @@
 // via https://osvaldas.info/auto-hide-sticky-header
 function layoutScrollHandler() {
   /* eslint-disable no-use-before-define */
-  let wScrollBefore    = wScrollBefore || 0;
+  const wScrollBefore  = Session.get('wScrollBefore');
   /* eslint-enable no-use-before-define */
   const elClassNarrow  = 'fixed_menu_dark';
   const elNarrowOffset = 50;
@@ -22,7 +22,7 @@ function layoutScrollHandler() {
   if (wScrollCurrent <= 0) { // scrolled to the very top; element sticks to the top
     element.css('top', '0px');
   } else if (wScrollDiff > 0) { // scrolled up; element slides in
-    element.css('top', `${elTop > 0 ? 0 : elTop}px`);
+    element.css('top', 0);
   } else if (wScrollDiff < 0) { // scrolled down
     if (wScrollCurrent + wHeight >= dHeight - elHeight) {
       // scrolled to the very bottom; element slides in
@@ -31,10 +31,11 @@ function layoutScrollHandler() {
       element.css('top', `${Math.abs(elTop) > elHeight ? -elHeight : elTop}px`);
     }
   }
-  wScrollBefore = wScrollCurrent;
+  Session.set('wScrollBefore', wScrollCurrent);
 }
 
 Template.layout.onCreated(function() {
+  Session.set('wScrollBefore', 0);
   $(window).on('scroll', layoutScrollHandler);
 });
 

@@ -45,11 +45,11 @@ html {
   left: 0;
 }
 .fixed_menu_dark > .container > .nav {
-  background-color: #000;
+  background-color: hsl(217, 71%, 53%);
 }
 
 .fixed_menu_dark > .container > .nav a.nav-item {
-    color: #ccc;
+    color: #fff;
 }
 .fixed_menu_dark > .container > .nav a.nav-item.is-active {
     color: #fff;
