@@ -2,6 +2,20 @@ html {
   background-color:#fff;
 }
 
+.button.showMore  {
+  background-color: transparent;
+  border-color: hsl(217, 71%, 53%);
+  color: hsl(217, 71%, 53%);
+  border-radius: 2px;
+  font-size: 0.75rem;
+}
+
+.button.showMore:focus, .button.showMore:hover  {
+  background-color: hsl(217, 71%, 53%);
+  border-color: hsl(217, 71%, 53%);
+  color: #fff;
+}
+
 .input.is-invisible {
   background-color: transparent;
   border: 0px solid;

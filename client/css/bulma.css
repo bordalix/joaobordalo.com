@@ -137,7 +137,7 @@ body {
 }
 
 a {
-  color: #1fc8db;
+  color: hsl(217, 71%,  53%);
   cursor: pointer;
   text-decoration: none;
   transition: none 86ms ease-out;
@@ -3071,7 +3071,7 @@ a.box:active {
     margin-top: 1.5rem;
   }
 }
-*/ 
+*/
 
 @media screen and (min-width: 769px) {
   .level-left {
@@ -3701,7 +3701,7 @@ a.box:active {
 
 .nav-item a,
 a.nav-item {
-  color: #7a7a7a;
+  color: #666;
 }
 
 .nav-item a:hover,
