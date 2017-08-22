@@ -26,7 +26,10 @@ Router.route('/(.*)', function() {
   }
   /* fool lighthouse by keeping html not empty */
   onPageLoad((sink) => {
-    sink.appendToBody('<div style="height:0;width:0;color:#fff" class="foolLighthouse">a</div>');
+    const html = '<div style="width:0;height:0;color:#fff">'
+               + '  Please enable JavaScript in your browser to view this site.'
+               + '</div>';
+    sink.appendToBody(html);
   });
   this.next();
 }, { where: 'server' });
