@@ -1,0 +1,79 @@
+.title,
+.subtitle {
+  word-break: break-word;
+}
+
+.title:not(:last-child),
+.subtitle:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  color: #363636;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.125;
+}
+
+.title + .subtitle {
+  margin-top: -1.25rem;
+}
+
+.title.is-1 {
+  font-size: 3.5rem;
+}
+
+.title.is-2 {
+  font-size: 2.75rem;
+}
+
+.title.is-3 {
+  font-size: 2rem;
+}
+
+.title.is-4 {
+  font-size: 1.5rem;
+}
+
+.title.is-5 {
+  font-size: 1.25rem;
+}
+
+.title.is-6 {
+  font-size: 14px;
+}
+
+.subtitle {
+  color: #4a4a4a;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.subtitle + .title {
+  margin-top: -1.5rem;
+}
+
+.subtitle.is-1 {
+  font-size: 3.5rem;
+}
+
+.subtitle.is-2 {
+  font-size: 2.75rem;
+}
+
+.subtitle.is-3 {
+  font-size: 2rem;
+}
+
+.subtitle.is-4 {
+  font-size: 1.5rem;
+}
+
+.subtitle.is-5 {
+  font-size: 1.25rem;
+}
+
+.subtitle.is-6 {
+  font-size: 14px;
+}

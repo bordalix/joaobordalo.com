@@ -1,0 +1,34 @@
+.image {
+  display: block;
+  position: relative;
+}
+
+.image img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.image.is-square img, .image.is-1by1 img, .image.is-4by3 img, .image.is-3by2 img, .image.is-16by9 img, .image.is-2by1 img {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.image.is-3by2 {
+  padding-top: 66.6666%;
+}
+
+/* lazy loading images */
+
+img {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+img[data-src] {
+  opacity: 0;
+}
