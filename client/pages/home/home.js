@@ -32,7 +32,7 @@ Template.home.events({
 
 Template.home.helpers({
   posts() {
-    return Posts.find().fetch().map(function (p) {
+    return Posts.find({}, { sort: { id: -1 } }).fetch().map(function (p) {
       const post = p;
       post.body = post.body.replace('<iframe', '<div class="placeholder"><iframe');
       post.body = post.body.replace('</iframe>', '</iframe></div>');
