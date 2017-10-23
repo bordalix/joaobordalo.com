@@ -12,6 +12,8 @@ Template.home.onRendered(function() {
   this.autorun(() => {
     const sub = this.subscribe('posts', Session.get('postsLimit'));
     if (sub.ready()) {
+      $('.noJavaScript').remove();
+      $('.spinner-container').remove();
       Tracker.afterFlush(makeYoutubeResponsive);
       Tracker.afterFlush(lazyLoadImagesAndIframes);
     }
