@@ -8,6 +8,8 @@ Router.configure({
 // https://forums.meteor.com/t/how-to-redirect-non-www-to-www-in-meteor/1826/2
 Router.route('/(.*)', function() {
   import { onPageLoad } from 'meteor/server-render';
+  /* avoid more than one append to body */
+  let append = true;
   /* redirect iscore */
   const host = this.request.headers.host;
   if (host.indexOf('iscore.pt') !== -1) {
@@ -26,10 +28,11 @@ Router.route('/(.*)', function() {
   }
   /* fool lighthouse by keeping html not empty */
   onPageLoad((sink) => {
-    const html = '<div style="width:0;height:0;color:#fff">'
-               + '  Please enable JavaScript in your browser to view this site.'
+    const html = '<div class="noJavaScript" style="width:0;height:0;color:#fff">'
+               + 'Please enable JavaScript in your browser to view this site.'
                + '</div>';
-    sink.appendToBody(html);
+    if (append) sink.appendToBody(html);
+    append = false;
   });
   this.next();
 }, { where: 'server' });
