@@ -9,9 +9,9 @@
   ],
 
   // SSL
-  "ssl": {
-    "pem": "ssl.pem"
-  },
+  //"ssl": {
+  //  "pem": "ssl.pem"
+  //},
 
   // Install MongoDB in the server, does not destroy local MongoDB on future setup
   "setupMongo": false,
@@ -37,6 +37,7 @@
 
   // Configure environment
   "env": {
+    "PORT": 3001,
     "ROOT_URL": "https://joaobordalo.com",
     "MONGO_URL": "mongodb://127.0.0.1/joaobordalo"
   },
