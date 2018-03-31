@@ -34,10 +34,11 @@ Template.home.events({
 
 Template.home.helpers({
   posts() {
-    return Posts.find({}, { sort: { id: -1 } }).fetch().map(function (p) {
-      const post = p;
-      post.body = post.body.replace('<iframe', '<div class="placeholder"><iframe');
-      post.body = post.body.replace('</iframe>', '</iframe></div>');
+    return Posts.find({}, { sort: { id: -1 } }).fetch().map(function (post) {
+      if (! post.body.match('placeholder')) {
+        post.body = post.body.replace('<iframe', '<div class="placeholder"><iframe');
+        post.body = post.body.replace('</iframe>', '</iframe></div>');
+      }
       return post;
     });
   },
