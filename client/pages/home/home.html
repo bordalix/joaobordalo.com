@@ -1,20 +1,22 @@
 <template name="home">
   {{> spinner }}
+  <section>
+    <h2 class="heading">Blog</h2>
+  </section>
   {{#each posts}}
+  <article class="post">
     {{> postHeader }}
-    <div class="content">
-      {{{ body }}}
-      {{#if extended }}
-        {{#if showMore id}}
-          {{{ extended }}}
-        {{else}}
-          <p class="has-text-centered">
-            <a id={{ id }} class="button showMore">Show more</a>
-          </p>
-        {{/if}}
+    {{{ body }}}
+    {{#if extended }}
+      {{#if showMore id}}
+        {{{ extended }}}
+      {{else}}
+        <div class="button">
+          <button id={{ id }} class="btn btn-primary btn-block">Show more</button>
+        </div>
       {{/if}}
-    </div>
-    <hr>
+    {{/if}}
+  </article>
   {{/each}}
   {{#if moreResults}}
     <div id="showMoreResults">
