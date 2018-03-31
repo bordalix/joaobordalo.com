@@ -32,6 +32,7 @@
       font-family: 'Roboto', sans-serif;
       font-size: 16px;
       line-height: 1.2;
+      font-weight: 300;
       color: #000;
     }
     a {
@@ -69,6 +70,11 @@
       margin-bottom: 60px;
     }
     p.subtitle { color:#666; }
+    p.is-graphic-legend {
+      font-size: 0.7rem;
+      text-align: center;
+      color:#333;
+    }
     article.post {
       margin-bottom: 80px;
     }
@@ -84,6 +90,13 @@
       font-size: 16px;
       line-height: 24px;
       margin-bottom: 24px;
+    }
+    ul {
+     list-style: disc outside;
+     margin: 1em 0;
+    }
+    li {
+      line-height: 24px;
     }
     .container {
       margin-left: auto;
@@ -181,6 +194,7 @@
       background-repeat: no-repeat;
       background-size: contain;
       background-image: url('/images/placeholder.png');
+      margin-bottom: 24px;
     }
     .icon {
       display: inline-block;

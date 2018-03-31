@@ -89,6 +89,7 @@ Router.route('/articles/:year/:month/:day/:permalink', {
     ];
   },
   data() {
+    console.log(Posts.findOne({ permalink: this.params.permalink }));
     return Posts.findOne({ permalink: this.params.permalink });
   }
 });

@@ -1,8 +1,5 @@
 <template name="home">
   {{> spinner }}
-  <section>
-    <h2 class="heading">Blog</h2>
-  </section>
   {{#each posts}}
   <article class="post">
     {{> postHeader }}
@@ -12,7 +9,7 @@
         {{{ extended }}}
       {{else}}
         <div class="button">
-          <button id={{ id }} class="btn btn-primary btn-block">Show more</button>
+          <button id={{ id }} class="btn btn-primary btn-block showMore">Show more</button>
         </div>
       {{/if}}
     {{/if}}
