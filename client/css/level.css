@@ -52,17 +52,14 @@
   .level-left {
     display: flex;
   }
+  .level-right {
+    display: flex;
+  }
 }
 
 .level-right {
   align-items: center;
   justify-content: flex-end;
-}
-
-@media screen and (min-width: 769px) {
-  .level-right {
-    display: flex;
-  }
 }
 
 .level {

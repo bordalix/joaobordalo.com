@@ -4,31 +4,27 @@
     {{{ body }}}
     {{{ extended }}}
   </div>
-  <nav class="level is-mobile is-previous-next">
+  <nav class="menu-bottom">
   {{# if previousPost }}
     <!-- Left side -->
-    <div class="level-left">
-      <div class="level-item">
+    <div class="post left">
       {{# with previousPost }}
         <p>
-          <span class="content is-small"><strong>&laquo; Previous post</strong></span><br />
+          <strong>&laquo; Previous post</strong><br />
           <a href="{{url}}">{{ title }}</a>
         </p>
-       {{/ with }}  
-      </div>
+      {{/ with }}
     </div>
   {{/ if }}
   {{# if nextPost}}
     <!-- Right side -->
-    <div class="level-right">
-      <div class="level-item">
+    <div class="post right">
       {{# with nextPost}}
-        <p class="has-text-right">
-          <span class="content is-small"><strong>Next post &raquo;</strong></span><br />
+        <p>
+          <strong>Next post &raquo;</strong><br />
           <a href="{{url}}">{{ title }}</a>
         </p>
       {{/ with }}
-      </div>
     </div>
   {{/ if }}
   </nav>
