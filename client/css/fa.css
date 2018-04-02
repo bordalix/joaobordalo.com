@@ -35,3 +35,13 @@
 .fa-stop:before {
   content: "\f04d";
 }
+
+.fa-search:before {
+  content: "\f002";
+}
+
+.fa-remove:before,
+.fa-close:before,
+.fa-times:before {
+  content: "\f00d";
+}

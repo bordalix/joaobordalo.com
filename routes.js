@@ -38,19 +38,13 @@ Router.route('/(.*)', function() {
 }, { where: 'server' });
 /* eslint-enable consistent-return */
 
-Router.route('/', {
-  name: 'home',
+Router.route('/', function() {
+  document.location.reload(true);
+});
+
+Router.route('/blog', {
+  name: 'blog',
   template: 'home'
-});
-
-Router.route('/about', {
-  name: 'about',
-  template: 'about'
-});
-
-Router.route('/contact', {
-  name: 'contact',
-  template: 'contact'
 });
 
 Router.route('/drucker', {
@@ -66,6 +60,7 @@ Router.route('/iscore', {
 Router.route('/search', {
   name: 'search',
   template: 'search',
+  layoutTemplate: 'layoutSearch',
   waitOn() {
     return [
       Meteor.subscribe('allPosts')

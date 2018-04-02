@@ -1,10 +1,15 @@
 <template name="search">
   <p class="control">
-    <input id="searchinput" class="input is-large is-invisible" type="text" placeholder="Search" autofocus>
-    <span class="help">Start writing, live results</span>
+    <input type="text"
+           id="searchinput"
+           placeholder="Search posts, live results"
+           class="form-control"
+           autocomplete="search"
+           autofocus="autofocus" />
   </p>
 {{#each searchResults}}
-  {{> postHeader }}
-  <hr>
+  <article>
+    {{> postHeader }}
+  </article>
 {{/each}}
 </template>
