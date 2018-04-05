@@ -2,7 +2,7 @@
   // Server authentication info
   "servers": [
     {
-      "host": "joaobordalo.com",
+      "host": "velocity.ga",
       "username": "ubuntu",
       "pem": "~/.ssh/amazonawswtst.pem"
     }
@@ -20,7 +20,7 @@
   "setupNode": false,
 
   // WARNING: If nodeVersion omitted will setup 0.10.36 by default. Do not use v, only version number.
-  "nodeVersion": "4.4.7",
+  "nodeVersion": "8.9.1",
 
   // Install PhantomJS in the server
   "setupPhantom": false,
