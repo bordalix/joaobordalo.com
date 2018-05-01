@@ -45,3 +45,8 @@
 .fa-times:before {
   content: "\f00d";
 }
+
+
+.fa-rss:before {
+  content: "\f09e";
+}
