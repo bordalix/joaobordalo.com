@@ -27,7 +27,6 @@ shell-server@0.3.1
 kadira:dochead
 gadicohen:sitemaps
 okgrow:analytics@3.0.1
-force-ssl@1.1.0
 gentlenode:meteor-gists
 check@1.3.0
 dynamic-import@0.3.0

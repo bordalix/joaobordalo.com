@@ -26,8 +26,6 @@ ecmascript-runtime-client@0.6.2
 ecmascript-runtime-server@0.5.0
 ejson@1.1.0
 es5-shim@4.7.3
-force-ssl@1.1.0
-force-ssl-common@1.1.0
 gadicohen:robots-txt@0.0.10
 gadicohen:sitemaps@0.0.26
 gentlenode:meteor-gists@0.1.0
