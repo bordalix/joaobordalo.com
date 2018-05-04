@@ -1,19 +1,6 @@
 <template name="layout">
   <div class="container" id="container">
     {{> header }}
-    <section>
-      <h2 class="heading"><a href="/blog">Blog</a></h2>
-    </section>
-    {{> yield }}
-  </div>
-</template>
-
-<template name="layoutSearch">
-  <div class="container" id="container">
-    {{> header }}
-    <section>
-      <h2 class="heading">Search</h2>
-      {{> yield }}
-    </section>
+    {{> yield  }}
   </div>
 </template>

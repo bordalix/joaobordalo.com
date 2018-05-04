@@ -47,30 +47,14 @@ Router.route('/blog', {
   template: 'home'
 });
 
-Router.route('/drucker', {
-  name: 'drucker',
-  template: 'drucker'
-});
-
-Router.route('/iscore', {
-  name: 'iscore',
-  template: 'iscore'
-});
-
 Router.route('/search', {
   name: 'search',
   template: 'search',
-  layoutTemplate: 'layoutSearch',
   waitOn() {
     return [
       Meteor.subscribe('allPosts')
     ];
   }
-});
-
-Router.route('/traffic', {
-  name: 'traffic',
-  template: 'traffic'
 });
 
 Router.route('/articles/:year/:month/:day/:permalink', {
@@ -84,7 +68,6 @@ Router.route('/articles/:year/:month/:day/:permalink', {
     ];
   },
   data() {
-    console.log(Posts.findOne({ permalink: this.params.permalink }));
     return Posts.findOne({ permalink: this.params.permalink });
   }
 });
@@ -123,20 +106,20 @@ Router.route('mobile/articles/:year/:month/:day/:permalink', {
 
 Router.route('/articles/:year/:month', function () {
   this.response.writeHead(301, {
-    Location: 'http://joaobordalo.com/'
+    Location: 'https://joaobordalo.com/'
   });
   this.response.end();
 }, { where: 'server' });
 
 Router.route('/pages/tag/:tag', function () {
   this.response.writeHead(301, {
-    Location: 'http://joaobordalo.com/'
+    Location: 'https://joaobordalo.com/'
   });
   this.response.end();
 }, { where: 'server' });
 
 Router.route('/pages/:stuff', function () {
-  const redirectUrl = `http://joaobordalo.com/${this.params.stuff}`;
+  const redirectUrl = `https://joaobordalo.com/${this.params.stuff}`;
   this.response.writeHead(301, {
     Location: redirectUrl
   });
@@ -148,14 +131,14 @@ Router.route('/pages/:stuff', function () {
 
 Router.route('/m', function () {
   this.response.writeHead(301, {
-    Location: 'http://joaobordalo.com/'
+    Location: 'https://joaobordalo.com/'
   });
   this.response.end();
 }, { where: 'server' });
 
 Router.route('/mobile', function () {
   this.response.writeHead(301, {
-    Location: 'http://joaobordalo.com/'
+    Location: 'https://joaobordalo.com/'
   });
   this.response.end();
 }, { where: 'server' });
