@@ -2,7 +2,7 @@
   // Server authentication info
   "servers": [
     {
-      "host": "velocity.ga",
+      "host": "joaobordalo.com",
       "username": "ubuntu",
       "pem": "~/.ssh/amazonawswtst.pem"
     }
