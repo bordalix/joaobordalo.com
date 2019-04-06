@@ -1,7 +1,7 @@
 sitemaps.add('/sitemap.xml', function () {
   const pages = ['/about', '/contact', '/search', '/traffic'].map(function (page) {
     return {
-      page: `http://joaobordalo.com${page}`,
+      page: `https://joaobordalo.com${page}`,
       lastmod: new Date(),
     };
   });
