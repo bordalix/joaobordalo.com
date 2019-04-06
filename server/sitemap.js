@@ -1,8 +1,30 @@
 sitemaps.add('/sitemap.xml', function () {
-  const pages = ['/about', '/contact', '/search', '/traffic'].map(function (page) {
-    return {
-      page: `https://joaobordalo.com${page}`,
+  const pages = [
+    {
+      page: 'https://joaobordalo.com/portfolio',
       lastmod: new Date(),
+      changefreq: 'monthly'
+    },
+    {
+      page: 'https://joaobordalo.com/search',
+      lastmod: new Date(),
+      changefreq: 'yearly'
+    },
+    {
+      page: 'https://joaobordalo.com/traffic',
+      lastmod: new Date(),
+      changefreq: 'always'
+    }
+  ];
+  const projects = [
+    'appcexplorer', 'batalhadosbitaites', 'cowork',
+    'ethereum-roulette', 'hatitude', 'iscore',
+    'worldleague', 'wtst'
+  ].map(function (project) {
+    return {
+      page: `https://joaobordalo.com/portfolio/${project}.html`,
+      lastmod: new Date(),
+      changefreq: 'monthly'
     };
   });
   const posts = Posts.find(
@@ -12,7 +34,8 @@ sitemaps.add('/sitemap.xml', function () {
     return {
       page: post.url,
       lastmod: post.createdAt,
+      changefreq: 'never'
     };
   });
-  return pages.concat(posts);
+  return pages.concat(posts).concat(projects);
 });
