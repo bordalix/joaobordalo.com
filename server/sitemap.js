@@ -2,17 +2,17 @@ sitemaps.add('/sitemap.xml', function () {
   const pages = [
     {
       page: 'https://joaobordalo.com/portfolio',
-      lastmod: new Date(),
+      lastmod: new Date().toISOString(),
       changefreq: 'monthly'
     },
     {
       page: 'https://joaobordalo.com/search',
-      lastmod: new Date(),
+      lastmod: new Date().toISOString(),
       changefreq: 'yearly'
     },
     {
       page: 'https://joaobordalo.com/traffic',
-      lastmod: new Date(),
+      lastmod: new Date().toISOString(),
       changefreq: 'always'
     }
   ];
@@ -23,7 +23,7 @@ sitemaps.add('/sitemap.xml', function () {
   ].map(function (project) {
     return {
       page: `https://joaobordalo.com/portfolio/${project}.html`,
-      lastmod: new Date(),
+      lastmod: new Date().toISOString(),
       changefreq: 'monthly'
     };
   });
