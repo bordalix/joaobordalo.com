@@ -28,7 +28,7 @@
     h2 { font-size: 32px; }
     h3 { font-size: 24px; }
     h4 { font-size: 24px; }
-    h6 { 
+    h6 {
       font-size: 16px;
       font-weight: 300;
       color:#999;
@@ -269,7 +269,7 @@
     nav .post.right p {
       text-align: right;
     }
-    
+
     hr.style-eight {
       overflow: visible; /* For IE */
       padding: 0;
@@ -289,7 +289,7 @@
         padding: 0 0.25em;
         background: white;
     }
-    
+
     .label {
         font-family: "Open Sans",Helvetica,Arial,sans-serif;
         font-weight: normal;
@@ -335,7 +335,7 @@
     .form-group {
         margin-bottom: 20px
     }
-    
+
     @media (min-width: 1200px) {
       h1 {
         line-height: 84px;
@@ -358,4 +358,8 @@
         font-size: 14px;
         line-height: 20px;
       }
+    }
+
+    i {
+      font-style: italic;
     }
