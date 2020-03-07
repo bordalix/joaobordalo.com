@@ -178,7 +178,7 @@ section { padding: 60px 0; }
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center center;
-  background-image: url('/images/placeholder.png');
+  background-image: url('https://cdn.joaobordalo.com/images/static/blog/placeholder.png');
   position: relative;
 }
 .placeholder iframe {

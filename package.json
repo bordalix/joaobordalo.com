@@ -6,7 +6,7 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "@babel/runtime": "^7.2.0",
+    "@babel/runtime": "^7.8.7",
     "babel-runtime": "^6.20.0",
     "eslint-utils": "^1.4.2",
     "lodash": "^4.17.13",
