@@ -13,7 +13,7 @@ body {
   overflow-wrap: break-word;
 }
 a {
-  color: #2b90d9;
+  color: #0478cc;
   outline: none;
   text-decoration: none;
 }
@@ -104,7 +104,7 @@ section { padding: 60px 0; }
   border: 0;
 }
 .text-primary {
-  color: #2b90d9;
+  color: #0478cc;
 }
 .heading {
   text-align: left;
@@ -117,7 +117,7 @@ section { padding: 60px 0; }
   width: 100px;
   height: 2px;
   margin: 20px 0 20px;
-  background: #2b90d9;
+  background: #0478cc;
 }
 .footer__copyright {
   background: #282c37;
@@ -143,12 +143,12 @@ section { padding: 60px 0; }
   border-radius: 0;
 }
 .btn-primary {
-    color: #2b90d9;
+    color: #0478cc;
     background-color: #fff;
-    border-color: #2b90d9
+    border-color: #0478cc
 }
 .btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary {
-    color: #2b90d9;
+    color: #0478cc;
     background-color: #ebebeb;
     border-color: #1e6fa9
 }
@@ -157,16 +157,16 @@ section { padding: 60px 0; }
 }
 .btn-primary.disabled,.btn-primary[disabled],fieldset[disabled] .btn-primary,.btn-primary.disabled:hover,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary:hover,.btn-primary.disabled:focus,.btn-primary[disabled]:focus,fieldset[disabled] .btn-primary:focus,.btn-primary.disabled:active,.btn-primary[disabled]:active,fieldset[disabled] .btn-primary:active,.btn-primary.disabled.active,.btn-primary[disabled].active,fieldset[disabled] .btn-primary.active {
     background-color: #fff;
-    border-color: #2b90d9
+    border-color: #0478cc
 }
 .btn-primary .badge {
     color: #fff;
-    background-color: #2b90d9
+    background-color: #0478cc
 }
 .btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active {
-    background: #2b90d9;
+    background: #0478cc;
     color: #fff;
-    border: solid 1px #2b90d9
+    border: solid 1px #0478cc
 }
 .btn-block {
     display: block;
@@ -272,7 +272,7 @@ hr.style-eight {
   padding: 0;
   border: none;
   border-top: medium double #ddd;
-  /* color: #2b90d9; */
+  /* color: #0478cc; */
   color: #bbb;
   text-align: center;
   margin-bottom: 50px;
@@ -323,7 +323,7 @@ label {
     color: #999
 }
 .form-control:focus {
-    border-color: #2b90d9;
+    border-color: #0478cc;
     outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(43, 144, 217, 0.6);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(43, 144, 217, 0.6)
