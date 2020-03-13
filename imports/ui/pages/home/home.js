@@ -1,3 +1,10 @@
+import { Template } from 'meteor/templating';
+import { Session } from 'meteor/session';
+import './home.html';
+import '../post/postHeader';
+import { lazyLoadImagesAndIframes } from '../../../lib/lazyLoading';
+import { makeYoutubeResponsive } from '../../../lib/youtubeResponsive';
+
 const ITEMS_INCREMENT = 5;
 
 Template.home.onCreated(function() {
@@ -35,7 +42,7 @@ Template.home.events({
 Template.home.helpers({
   posts() {
     return Posts.find({}, { sort: { id: -1 } }).fetch().map(function (post) {
-      if (! post.body.match('placeholder')) {
+      if (!post.body.match('placeholder')) {
         post.body = post.body.replace('<iframe', '<div class="placeholder"><iframe');
         post.body = post.body.replace('</iframe>', '</iframe></div>');
       }

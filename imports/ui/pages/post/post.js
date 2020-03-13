@@ -1,3 +1,6 @@
+import { Template } from 'meteor/templating';
+import './post.html';
+
 Template.post.onCreated(function () {
   const text = this.data.title;
   DocHead.removeDocHeadAddedTags();

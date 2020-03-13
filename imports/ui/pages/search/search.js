@@ -1,3 +1,8 @@
+import { Template } from 'meteor/templating';
+import { Session } from 'meteor/session';
+import { DocHead } from 'meteor/kadira:dochead';
+import './search.html';
+
 truncateText = function(text, length) {
   if (text && text.length > length) {
     return `${text.substring(0, length)}...`;

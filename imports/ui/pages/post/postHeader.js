@@ -1,3 +1,8 @@
+import { Template } from 'meteor/templating';
+import { Session } from 'meteor/session';
+import './postHeader.html';
+import './postHeader.css';
+
 Template.postHeader.onCreated(function () {
   if ('speechSynthesis' in window) {
     // Reactive variable for our state machine

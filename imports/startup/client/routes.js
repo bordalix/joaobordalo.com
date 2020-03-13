@@ -1,3 +1,10 @@
+/* eslint-disable import/newline-after-import */
+/* eslint-disable import/no-duplicates */
+
+import '/imports/ui/layouts/main/layout';
+import '/imports/ui/layouts/notFound/notFound';
+import '/imports/ui/components/loading/loading';
+
 Router.configure({
   layoutTemplate: 'layout',
   loadingTemplate: 'loading',
@@ -14,12 +21,12 @@ Router.route('/(.*)', function() {
   const host = this.request.headers.host;
   if (host.indexOf('iscore.pt') !== -1) {
     this.response.writeHead(301, {
-      Location: 'http://joaobordalo.com/iscore'
+      Location: 'https://joaobordalo.com/iscore'
     });
     return this.response.end();
   }
   /* removes www from url and redirect */
-  const fullUrl = `http://${host}${this.request.url}`;
+  const fullUrl = `https://${host}${this.request.url}`;
   if (host.indexOf('www') === 0) {
     this.response.writeHead(301, {
       Location: fullUrl.replace('www.', '')
@@ -44,13 +51,17 @@ Router.route('/', function() {
 
 Router.route('/blog', {
   name: 'blog',
-  template: 'home'
+  template: 'home',
+  waitOn() {
+    import '/imports/ui/pages/home/home';
+  }
 });
 
 Router.route('/search', {
   name: 'search',
   template: 'search',
   waitOn() {
+    import '/imports/ui/pages/search/search';
     return [
       Meteor.subscribe('allPosts')
     ];
@@ -61,6 +72,7 @@ Router.route('/articles/:year/:month/:day/:permalink', {
   name: 'post',
   template: 'post',
   waitOn() {
+    import '/imports/ui/pages/post/post';
     return [
       Meteor.subscribe('thisPost', this.params.permalink),
       Meteor.subscribe('nextPost', this.params.permalink),
@@ -79,6 +91,7 @@ Router.route('m/articles/:year/:month/:day/:permalink', {
   name: 'post_m',
   template: 'post',
   waitOn() {
+    import '/imports/ui/pages/post/post';
     return [
       Meteor.subscribe('thisPost', this.params.permalink)
     ];
@@ -92,6 +105,7 @@ Router.route('mobile/articles/:year/:month/:day/:permalink', {
   name: 'post_mobile',
   template: 'post',
   waitOn() {
+    import '/imports/ui/pages/post/post';
     return [
       Meteor.subscribe('thisPost', this.params.permalink)
     ];

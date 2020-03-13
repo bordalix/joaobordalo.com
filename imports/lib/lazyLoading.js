@@ -1,4 +1,4 @@
-lazyLoadImagesAndIframes = function () {
+const lazyLoadImagesAndIframes = function () {
   ['img[data-src]', 'iframe[data-src]'].forEach(function (selector) {
     document.querySelectorAll(selector).forEach(function (el) {
       el.setAttribute('src', el.getAttribute('data-src'));
@@ -8,3 +8,6 @@ lazyLoadImagesAndIframes = function () {
     });
   });
 };
+
+// eslint-disable-next-line import/prefer-default-export
+export { lazyLoadImagesAndIframes };
