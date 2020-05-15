@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Session } from 'meteor/session';
-import { DocHead } from 'meteor/kadira:dochead';
 import './search.html';
+import '../post/postHeader';
 
 truncateText = function(text, length) {
   if (text && text.length > length) {
@@ -11,10 +11,7 @@ truncateText = function(text, length) {
 };
 
 Template.search.onCreated(function() {
-  const text = 'Search João Bordalo blog posts';
-  DocHead.removeDocHeadAddedTags();
-  DocHead.setTitle(text);
-  DocHead.addMeta({ name: 'description', content: text });
+  document.title = 'Search João Bordalo blog posts';
   Session.set('filterexpression', '');
   Session.set('searchedsomething', false);
 });

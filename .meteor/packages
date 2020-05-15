@@ -24,7 +24,6 @@ raix:rssfeed
 momentjs:moment
 dburles:collection-helpers
 shell-server@0.4.0
-kadira:dochead
 gadicohen:sitemaps
 okgrow:analytics@3.0.1
 gentlenode:meteor-gists
