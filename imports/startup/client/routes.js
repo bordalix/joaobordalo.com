@@ -76,7 +76,7 @@ Router.route('/articles/:year/:month/:day/:permalink', {
     return [
       Meteor.subscribe('thisPost', this.params.permalink),
       Meteor.subscribe('nextPost', this.params.permalink),
-      Meteor.subscribe('previousPost', this.params.permalink)
+      Meteor.subscribe('prevPost', this.params.permalink)
     ];
   },
   data() {

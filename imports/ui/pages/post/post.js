@@ -21,7 +21,7 @@ Template.post.onRendered(function() {
 });
 
 Template.post.helpers({
-  previousPost() {
+  prevPost() {
     return Posts.findOne({ id: { $lt: this.id } });
   },
   nextPost() {

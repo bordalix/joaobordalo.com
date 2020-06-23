@@ -12,7 +12,7 @@ Meteor.publish('thisPost', function (link) {
   return Posts.find({ permalink: link });
 });
 
-Meteor.publish('previousPost', function (link) {
+Meteor.publish('prevPost', function (link) {
   check(link, String);
   const thisPostID = Posts.findOne({ permalink: link }).id;
   return Posts.find(
