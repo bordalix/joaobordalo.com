@@ -145,7 +145,8 @@ section { padding: 60px 0; }
 .btn-primary {
     color: #0478cc;
     background-color: #fff;
-    border-color: #0478cc
+    border-color: #0478cc;
+    border-width: 1px;
 }
 .btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary {
     color: #0478cc;
