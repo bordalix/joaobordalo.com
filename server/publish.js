@@ -1,4 +1,4 @@
-Meteor.publish('posts', function (maxPosts) {
+Meteor.publish('posts', function(maxPosts) {
   check(maxPosts, Number);
   return Posts.find({ }, { sort: { id: -1 }, limit: maxPosts });
 });
@@ -12,7 +12,7 @@ Meteor.publish('thisPost', function (link) {
   return Posts.find({ permalink: link });
 });
 
-Meteor.publish('prevPost', function (link) {
+Meteor.publish('prevPost', function(link) {
   check(link, String);
   const thisPostID = Posts.findOne({ permalink: link }).id;
   return Posts.find(
@@ -24,7 +24,7 @@ Meteor.publish('prevPost', function (link) {
   );
 });
 
-Meteor.publish('nextPost', function (link) {
+Meteor.publish('nextPost', function(link) {
   check(link, String);
   const thisPostID = Posts.findOne({ permalink: link }).id;
   return Posts.find(
@@ -37,10 +37,14 @@ Meteor.publish('nextPost', function (link) {
 });
 
 
-Meteor.startup(function () {
+Meteor.startup(function() {
   Posts._ensureIndex({ permalink: 1 });
 });
 
-Meteor.publish('allPosts', function () {
+Meteor.publish('allPosts', function() {
   return Posts.find();
+});
+
+Meteor.publish('chessGame', function() {
+  return ChessGame.find({ id: 1 });
 });

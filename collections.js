@@ -6,3 +6,5 @@ Posts.helpers({
     return moment(date).fromNow();
   }
 });
+
+ChessGame = new Mongo.Collection('chessgame');

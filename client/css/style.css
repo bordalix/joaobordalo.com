@@ -383,3 +383,24 @@ i {
   position: absolute;
   width: auto;
 }
+
+div#chess {
+  width: 400px;
+}
+
+div#chess div#myBoard {
+  margin: 1rem 0;
+}
+
+div#chess div.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5px;
+}
+
+div#chess .highlight-white {
+  box-shadow: inset 0 0 3px 3px yellow;
+}
+div#chess .highlight-black {
+  box-shadow: inset 0 0 3px 3px blue;
+}

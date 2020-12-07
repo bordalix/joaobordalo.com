@@ -156,3 +156,14 @@ Router.route('/mobile', function () {
   });
   this.response.end();
 }, { where: 'server' });
+
+Router.route('/chess', {
+  name: 'chess',
+  template: 'chess',
+  waitOn() {
+    import '/imports/ui/pages/chess/chess';
+    return [
+      Meteor.subscribe('chessGame')
+    ];
+  },
+});
