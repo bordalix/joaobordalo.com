@@ -17,8 +17,8 @@ sitemaps.add('/sitemap.xml', function () {
     }
   ];
   const projects = [
-    'appcexplorer', 'batalhadosbitaites', 'cowork',
-    'ethereum-roulette', 'hatitude', 'iscore',
+    'appcexplorer', 'appcoins', 'batalhadosbitaites', 'bitcoinstats', 'cowork',
+    'dogoffleash', 'ethereum-roulette', 'guiasporttv', 'hatitude', 'iscore',
     'worldleague', 'wtst'
   ].map(function (project) {
     return {
