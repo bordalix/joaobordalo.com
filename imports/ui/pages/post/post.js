@@ -1,9 +1,9 @@
 import { Template } from 'meteor/templating';
 import './post.html';
 import './postHeader';
-import { lazyLoadImagesAndIframes } from '../../../lib/lazyLoading';
-import { makeYoutubeResponsive } from '../../../lib/youtubeResponsive';
-import { stripHtml } from '../../../lib/stripHtml';
+import lazyLoadImagesAndIframes from '../../../lib/lazyLoading';
+import makeYoutubeResponsive from '../../../lib/youtubeResponsive';
+import stripHtml from '../../../lib/stripHtml';
 
 Template.post.onCreated(function() {
   const desc = stripHtml(this.data.body);

@@ -3,5 +3,4 @@ const stripHtml = function (html) {
   return doc.body.textContent || '';
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export { stripHtml };
+export default stripHtml;
