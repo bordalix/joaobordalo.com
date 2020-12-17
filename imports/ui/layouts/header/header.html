@@ -1,31 +1,36 @@
 <template name="header">
   <nav class="menu-top">
-    <div class="option">
-      <p>
-        <a onclick="window.location='https://joaobordalo.com'" style="cursor:pointer;">
-          &laquo; back to <img src="https://cdn.joaobordalo.com/images/static/logos/logo_small.png" class="logo" alt="JB logo">
-        </a>
-      </p>
+    <div class="menu-option">
+        <p>
+          <a href="/">
+            &laquo; back to
+            <img width="24" height="24" src="https://cdn.joaobordalo.com/images/static/logos/logo_circle.png" aria-hidden="true" class="logo" alt="JB logo">
+          </a>
+        </p>
     </div>
-    <div class="option right">
-      <p>
-        <a href="https://feeds.feedburner.com/joaobordalo">
-          <i class="fa fa-rss"></i>
-          <span class="visually-hidden">RSS feed</span>
-        </a>
-        &ensp;
+    <div class="menu-option right">
+        <p>
+          <a href="https://feeds.feedburner.com/joaobordalo">
+            <i class="fa fa-rss"></i>
+            <span class="visually-hidden">RSS feed</span>
+          </a>
+          &nbsp;
         {{# if onSearch }}
-        <a onclick="window.history.go(-1)" style="cursor:pointer;">
-          <i class="fa fa-close"></i>
-        </a>
+          <a onclick="window.history.go(-1)" style="cursor:pointer;">
+            <i class="fa fa-close"></i>
+          </a>
         {{ else }}
-        <a href="/search">
-          <i class="fa fa-search"></i>
-          <span class="visually-hidden">Search</span>
-        </a>
+          <a href="/search">
+            <i class="fa fa-search"></i>
+            <span class="visually-hidden">Search</span>
+          </a>
         {{/ if }}
-      </p>
+          &nbsp;
+          <a href="">
+            <i class="fa fa-adjust dark-theme-toggle"></i>
+            <span class="sr-only">Dark mode toggle</span>
+          </a>
+        </p>
     </div>
-    <div style="clear: both"></div>
   </nav>
 </template>

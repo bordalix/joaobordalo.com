@@ -1,16 +1,20 @@
 <template name="search">
-  <h1 class="heading">Search</h1>
-  <p class="control">
-    <input type="search"
-           id="searchinput"
-           placeholder="Search posts, live results"
-           class="form-control"
-           autocomplete="search"
-           autofocus="autofocus" />
-  </p>
-{{#each searchResults}}
-  <article>
-    {{> postHeader }}
-  </article>
-{{/each}}
+  <section>
+    <div class="inner-container" id="inner-container">
+      <h1 class="heading">Search</h1>
+      <p class="control">
+        <input type="search"
+               id="searchinput"
+               placeholder="Search posts, live results"
+               class="form-control"
+               autocomplete="search"
+               autofocus="autofocus" />
+      </p>
+      {{#each searchResults}}
+        <article>
+          {{> postHeader }}
+        </article>
+      {{/each}}
+    </div>
+  </section>
 </template>

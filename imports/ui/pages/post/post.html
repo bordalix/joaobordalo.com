@@ -1,32 +1,36 @@
 <template name="post">
-  <h1 class="heading"><a href="/blog">Blog</a></h1>
-  {{> postHeader }}
-  <div class="content">
-    {{{ body }}}
-    {{{ extended }}}
-  </div>
-  <nav class="menu-bottom">
-  {{# if prevPost }}
-    <!-- Left side -->
-    <div class="post left">
-      {{# with prevPost }}
-        <p>
-          <strong>&laquo; Previous post</strong><br />
-          <a href="{{url}}">{{ title }}</a>
-        </p>
-      {{/ with }}
+  <section>
+    <div class="inner-container" id="inner-container">
+      <h1 class="heading"><a href="/blog">Blog</a></h1>
+      {{> postHeader }}
+      <div class="content">
+        {{{ body }}}
+        {{{ extended }}}
+      </div>
+      <nav class="menu-bottom">
+      {{# if prevPost }}
+        <!-- Left side -->
+        <div class="post left">
+          {{# with prevPost }}
+            <p>
+              <strong>&laquo; Previous post</strong><br />
+              <a href="{{url}}">{{ title }}</a>
+            </p>
+          {{/ with }}
+        </div>
+      {{/ if }}
+      {{# if nextPost}}
+        <!-- Right side -->
+        <div class="post right">
+          {{# with nextPost}}
+            <p>
+              <strong>Next post &raquo;</strong><br />
+              <a href="{{url}}">{{ title }}</a>
+            </p>
+          {{/ with }}
+        </div>
+      {{/ if }}
+      </nav>
     </div>
-  {{/ if }}
-  {{# if nextPost}}
-    <!-- Right side -->
-    <div class="post right">
-      {{# with nextPost}}
-        <p>
-          <strong>Next post &raquo;</strong><br />
-          <a href="{{url}}">{{ title }}</a>
-        </p>
-      {{/ with }}
-    </div>
-  {{/ if }}
-  </nav>
+  </section>
 </template>

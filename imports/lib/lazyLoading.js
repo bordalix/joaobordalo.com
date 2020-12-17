@@ -9,5 +9,4 @@ const lazyLoadImagesAndIframes = function () {
   });
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export { lazyLoadImagesAndIframes };
+export default lazyLoadImagesAndIframes;

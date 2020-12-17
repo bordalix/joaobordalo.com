@@ -2,8 +2,8 @@ import { Template } from 'meteor/templating';
 import { Session } from 'meteor/session';
 import './home.html';
 import '../post/postHeader';
-import { lazyLoadImagesAndIframes } from '../../../lib/lazyLoading';
-import { makeYoutubeResponsive } from '../../../lib/youtubeResponsive';
+import lazyLoadImagesAndIframes from '../../../lib/lazyLoading';
+import makeYoutubeResponsive from '../../../lib/youtubeResponsive';
 
 const ITEMS_INCREMENT = 5;
 

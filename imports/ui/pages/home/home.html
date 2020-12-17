@@ -1,25 +1,28 @@
 <template name="home">
-  <h1 class="heading"><a href="/blog">Blog</a></h1>
-  {{> spinner }}
-  {{#each posts}}
-  <article class="post">
-    {{> postHeader }}
-    {{{ body }}}
-    {{#if extended }}
-      {{#if showMore id}}
-        {{{ extended }}}
-      {{else}}
-        <div class="button">
-          <button id={{ id }} class="btn btn-primary btn-block showMore">Read more</button>
+  <section>
+    <div class="inner-container" id="inner-container">
+      <h1 class="heading">Blog</h1>
+      {{> spinner }}
+      {{#each posts}}
+        <article class="post">
+          {{> postHeader }}
+          {{{ body }}}
+          {{#if extended }}
+            {{#if showMore id}}
+              {{{ extended }}}
+            {{else}}
+              <p>
+                <a id={{ id }} class="showMore">Continue reading...</a>
+              </p>
+            {{/if}}
+          {{/if}}
+        </article>
+      {{/each}}
+      {{#if moreResults}}
+        <div id="showMoreResults">
+          <p>Loading...</p>
         </div>
       {{/if}}
-    {{/if}}
-  </article>
-  <hr class="style-eight">
-  {{/each}}
-  {{#if moreResults}}
-    <div id="showMoreResults">
-      <p>Loading...</p>
     </div>
-  {{/if}}
+  </section>
 </template>

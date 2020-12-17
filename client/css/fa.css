@@ -55,3 +55,7 @@
 .fa-rss:before {
   content: "\f09e";
 }
+
+.fa-adjust:before{
+  content:"\f042";
+}

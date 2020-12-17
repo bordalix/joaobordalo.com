@@ -1,7 +1,8 @@
 // https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
 const makeYoutubeResponsive = function () {
+  console.log('makeYoutubeResponsive');
   const $allVideos = $('iframe');
-  const $fluidEl = $('#container');
+  const $fluidEl = $('#inner-container');
   $allVideos.each(function() {
     $(this)
       // jQuery .data does not work on object/embed elements
@@ -20,5 +21,4 @@ const makeYoutubeResponsive = function () {
   }).resize();
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export { makeYoutubeResponsive };
+export default makeYoutubeResponsive;
