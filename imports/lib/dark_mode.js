@@ -1,5 +1,4 @@
 const addDarkThemeEvent = function() {
-  console.log('addDarkThemeEvent');
   // select the button
   const toggle = document.querySelector('.dark-theme-toggle');
   // select the theme preference from localStorage

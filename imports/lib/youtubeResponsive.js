@@ -1,6 +1,5 @@
 // https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
 const makeYoutubeResponsive = function () {
-  console.log('makeYoutubeResponsive');
   const $allVideos = $('iframe');
   const $fluidEl = $('#inner-container');
   $allVideos.each(function() {
