@@ -75,6 +75,58 @@ function onSnapEnd () {
   board.position(game.fen());
 }
 
+function cleanMissingPieces() {
+  document.querySelector('.topPieces').innerHTML = '';
+  document.querySelector('.bottomPieces').innerHTML = '';
+}
+
+function addMissingPieces(aux) {
+  let divClass;
+  const divClasses = {
+    top: '.topPieces',
+    bottom: '.bottomPieces'
+  };
+  cleanMissingPieces();
+  Object.keys(aux).forEach((piece) => {
+    if (piece.match(/b/)) {
+      divClass = board.orientation() === 'black' ? divClasses.top : divClasses.bottom;
+    } else {
+      divClass = board.orientation() === 'white' ? divClasses.top : divClasses.bottom;
+    }
+    for (let i = 0; i < aux[piece]; i += 1) {
+      const img = document.createElement('img');
+      img.src = `img/chesspieces/wikipedia/${piece}`;
+      document.querySelector(divClass).appendChild(img);
+    }
+  })
+}
+
+// find missing pieces
+function findMissingPieces(fen) {
+  const aux = {};
+  const position = fen.split(' ')[0];
+  const allPieces = {
+    p: { count: 8, img: 'bP.png' },
+    r: { count: 2, img: 'bR.png' },
+    n: { count: 2, img: 'bN.png' },
+    b: { count: 2, img: 'bB.png' },
+    q: { count: 1, img: 'bQ.png' },
+    k: { count: 1, img: 'bP.png' },
+    P: { count: 8, img: 'wP.png' },
+    R: { count: 2, img: 'wR.png' },
+    N: { count: 2, img: 'wN.png' },
+    B: { count: 2, img: 'wB.png' },
+    Q: { count: 1, img: 'wQ.png' },
+    K: { count: 1, img: 'wK.png' },
+  };
+  Object.keys(allPieces).forEach((piece) => {
+    const regexp = new RegExp(piece, 'g');
+    const diff = allPieces[piece].count - (position.match(regexp) || []).length;
+    if (diff > 0) aux[allPieces[piece].img] = diff;
+  });
+  addMissingPieces(aux);
+}
+
 Template.chess.onCreated(function() {
   Meteor.subscribe('chessGame');
 });
@@ -107,8 +159,10 @@ Template.chess.onRendered(function() {
         board.start();
         game.reset();
         highlightMove();
+        cleanMissingPieces();
       } else {
         board.position(chessGame.fen);
+        findMissingPieces(chessGame.fen);
         game = new Chess(chessGame.fen);
         highlightMove(chessGame);
       }
