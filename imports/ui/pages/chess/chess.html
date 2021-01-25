@@ -1,12 +1,24 @@
 <template name="chess">
-  <div id="chess">
-    <div id="status"></div>
-    <div class="topPieces pieces"></div>
-    <div id="myBoard"></div>
-    <div class="bottomPieces pieces"></div>
-    <div class="buttons">
-      <button id="resetBoard">Reset</button>
-      <button id="flipBoard">Flip</button>
+  <section id="chess">
+    <p id="status"></p>
+    <div class="piecesClock">
+      <div id="topPieces" class="pieces"></div>
+      <p id="topClock">00:00</p>
     </div>
-  </div>
+    <div id="myBoard"></div>
+    <div class="piecesClock">
+      <div id="bottomPieces" class="pieces"></div>
+      <p id="bottomClock">00:00</p>
+    </div>
+    <div class="buttons">
+      <p><button id="resetBoard">Reset</button></p>
+      <p>
+        <input type="number" id="minutes" value="5">
+        |
+        <input type="number" id="seconds" value="0">
+        <button id="startClock">Start clock</button>
+      </p>
+      <p><button id="flipBoard">Flip</button></p>
+    </div>
+  </section>
 </template>

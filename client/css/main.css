@@ -331,13 +331,3 @@ a.btt {
     padding-left: 0;
   }
 }
-
-#chess .pieces {
-  height: 30px;
-  margin: 1rem 0;
-}
-
-#chess .pieces img {
-  width: 25px;
-  height: 25px;
-}
