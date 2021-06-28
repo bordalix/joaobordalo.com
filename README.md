@@ -16,7 +16,7 @@ SEO best practices implemented:
 
 - Dynamic title and meta description
 - Server Side Rendering via prerender.io
-- Analytics (with event generation)
+- ~~Analytics (with event generation)~~
 - Dynamic sitemap generation
 - SSL and force SSL
 - Open Graph tags
@@ -38,7 +38,7 @@ It expects a Mongo collection named 'posts', with the following schema:
 	title: STRING, // E.g.: "The new friday song"
 	createdAt: DATE, // E.g.: "2006-11-08 05:32:16"
 	permalink: STRING, // E.g.: "the-new-friday-song"
-	body: STRING, // E.g.: "<p>Hello world!</p><iframe>...</iframe>"   
+	body: STRING, // E.g.: "<p>Hello world!</p><iframe>...</iframe>"
 	url: STRING // E.g.: "http://joaobordalo.com/articles/2006/11/08/the-new-friday-song"
 }
 

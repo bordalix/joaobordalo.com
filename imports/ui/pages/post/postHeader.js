@@ -37,7 +37,7 @@ Template.postHeader.helpers({
 
 Template.postHeader.events({
   'click .hearit'() {
-    analytics.track('Play speech synthesis'); // generate event in analytics
+    // analytics.track('Play speech synthesis'); // generate event in analytics
     if ('speechSynthesis' in window) {
       window.speechSynthesis.cancel(); // stops reading
       Session.set('activeSpeech', this.id); // active post
@@ -52,21 +52,21 @@ Template.postHeader.events({
     }
   },
   'click .pauseit'() {
-    analytics.track('Pause speech synthesis');
+    // analytics.track('Pause speech synthesis');
     if ('speechSynthesis' in window) {
       Template.instance().speechStatus.set('paused'); // update state machine
       window.speechSynthesis.pause();
     }
   },
   'click .resumeit'() {
-    analytics.track('Resume speech synthesis');
+    // analytics.track('Resume speech synthesis');
     if ('speechSynthesis' in window) {
       Template.instance().speechStatus.set('playing'); // update state machine
       window.speechSynthesis.resume();
     }
   },
   'click .stopit'() {
-    analytics.track('Stop speech synthesis');
+    // analytics.track('Stop speech synthesis');
     if ('speechSynthesis' in window) {
       Template.instance().speechStatus.set('stoped'); // update state machine
       window.speechSynthesis.cancel();

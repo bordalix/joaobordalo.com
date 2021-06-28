@@ -25,7 +25,7 @@ Template.search.events({
     if (event.which === 13) event.currentTarget.blur();
     Session.set('filterexpression', event.currentTarget.value);
     if (!Session.get('searchedsomething')) {
-      analytics.track('Searched something');
+      // analytics.track('Searched something');
       Session.set('searchedsomething', true);
     }
   }
