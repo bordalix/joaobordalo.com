@@ -2,7 +2,7 @@
   // Server authentication info
   "servers": [
     {
-      "host": "joaobordalo.com",
+      "host": "ip.joaobordalo.com",
       "username": "ubuntu",
       "pem": "~/.ssh/amazonawswtst.pem"
     }
