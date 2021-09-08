@@ -46,7 +46,7 @@ Template.postHeader.events({
         toText += this.extended.replace(/<.*?>/g, ''); // delete html tags
       }
       const toSpeak = new SpeechSynthesisUtterance(toText); // build speech object
-      toSpeak.rate = 1.1; // like it more a little bit faster
+      toSpeak.rate = 1.1; // like it a little bit faster
       Template.instance().speechStatus.set('playing'); // update state machine
       window.speechSynthesis.speak(toSpeak); // read it out loud
     }
