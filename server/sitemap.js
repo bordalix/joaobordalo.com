@@ -1,6 +1,16 @@
 sitemaps.add('/sitemap.xml', function () {
   const pages = [
     {
+      page: 'https://joaobordalo.com/blog',
+      lastmod: new Date().toISOString(),
+      changefreq: 'always'
+    },
+    {
+      page: 'https://joaobordalo.com/covid',
+      lastmod: new Date().toISOString(),
+      changefreq: 'always'
+    },
+    {
       page: 'https://joaobordalo.com/portfolio',
       lastmod: new Date().toISOString(),
       changefreq: 'monthly'
@@ -14,12 +24,12 @@ sitemaps.add('/sitemap.xml', function () {
       page: 'https://joaobordalo.com/traffic',
       lastmod: new Date().toISOString(),
       changefreq: 'always'
-    }
+    },
   ];
   const projects = [
-    'appcexplorer', 'appcoins', 'batalhadosbitaites', 'bitcoinstats', 'cowork',
-    'dogoffleash', 'ethereum-roulette', 'guiasporttv', 'hatitude', 'iscore',
-    'worldleague', 'wtst'
+    'appcexplorer', 'appcoins', 'batalhadosbitaites', 'bitcoinstats',
+    'cowork', 'dogoffleash', 'ethereum-roulette', 'guiasporttv',
+    'hatitude', 'iscore', 'worldleague', 'wtst'
   ].map(function (project) {
     return {
       page: `https://joaobordalo.com/portfolio/${project}.html`,
