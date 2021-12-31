@@ -25,44 +25,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.fa-volume-up:before {
-  content: "\f028";
-}
-
-.fa-pause:before {
-  content: "\f04c";
-}
-
-.fa-play:before {
-  content: "\f04b";
-}
-
-.fa-stop:before {
-  content: "\f04d";
-}
-
-.fa-search:before {
-  content: "\f002";
-}
-
-.fa-remove:before,
-.fa-close:before,
-.fa-times:before {
-  content: "\f00d";
-}
-
-.fa-rss:before {
-  content: "\f09e";
-}
-
-.fa-adjust:before{
-  content:"\f042";
-}
-
-.fa-twitter:before {
-  content: "\f099";
-}
-
-.fa-github:before {
-  content: "\f09b";
-}
+.fa-volume-up:before { content: "\f028"; }
+.fa-pause:before { content: "\f04c"; }
+.fa-play:before { content: "\f04b"; }
+.fa-stop:before { content: "\f04d"; }
+.fa-search:before { content: "\f002"; }
+.fa-close:before { content: "\f00d"; }
+.fa-rss:before { content: "\f09e"; }
+.fa-adjust:before{ content:"\f042"; }
+.fa-twitter:before { content: "\f099"; }
+.fa-github:before { content: "\f09b"; }
+.fa-certificate:before { content: "\f0a3"; }
